@@ -56,7 +56,8 @@ def compute_ward_linkage(cluster1,cluster2):
     n_cluster1 = len(cluster1)
     n_cluster2 = len(cluster2)
     n_total = n_cluster1 + n_cluster2
-
+    dist_quadratica = (n_cluster1 * dist_euclidiana(centroide1,centroide2)**2 +
+        (n_cluster2 * dist_euclidiana(centroide1,centroide2))**2) / n_total
 
     return dist_quadratica
 
@@ -71,6 +72,6 @@ print("similaridade ligação simples: ", compute_single_linkage(cluster1,cluste
 print("similaridade ligação completa: ", compute_complete_linkage(cluster1,cluster2))
 print("similaridade ligação média: ", compute_average_linkage(cluster1,cluster2))
 print("similaridade pelo método do centroide: ", compute_centroid_linkage(cluster1,cluster2))
-print("similaridade ligação ward: ", compute_ward_linkage(cluster1,cluster2))
+print("similaridade ligação simples: ", compute_ward_linkage(cluster1,cluster2))
 
 
