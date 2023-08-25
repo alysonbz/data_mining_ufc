@@ -3,7 +3,7 @@ import numpy as np
 
 
 def compute_single_linkage(cluster1,cluster2):
-    return None
+     return None
 
 def compute_complete_linkage(cluster1, cluster2):
      return None
