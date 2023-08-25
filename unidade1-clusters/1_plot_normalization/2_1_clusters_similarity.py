@@ -43,8 +43,8 @@ def compute_centroid_linkage(cluster1,cluster2):
 
 # Calcula a distancia de cada ponto ao centroide
 def compute_ward_linkage(cluster1,cluster2):
-    cluster_mesclado = np.vstack((cluster1, cluster2))
     distancia_total = 0
+    cluster_mesclado = np.vstack((cluster1, cluster2))
     centroide = np.mean(cluster_mesclado, axis=0)
     for p in cluster_mesclado:
         distancia_total += euclidean(p, centroide) ** 2
