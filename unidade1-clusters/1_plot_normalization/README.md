@@ -11,7 +11,7 @@ Esse documento exibe as descrições das questões a serem resolvidas em sala
 
 #### Plotando conjunto de dados
 
-Nesta questão você vai realizar uma predição com KNN.
+Nesta questão você visualizar o conjunto de dados.
 
 #### Instruções:
 
@@ -56,3 +56,19 @@ Nesta questão você vai realizar um cálculo para determinar a similaridade ent
 5) Com função ``compute_ward_linkage`` calcule o método de ward. 
 
 dica: você pode implementar funções auxiliares além das descritas.
+
+
+### Questão 3
+
+[3_kmeans.py](3_kmeans.py)
+
+#### Custerização com Kmeans
+
+Nesta questão você vai realizar uma clusterização com o kmeans
+
+#### Instruções
+
+1) Instancie o kmeans com 2 clusters para o dataframe df
+2) Em df['cluster_labels'] adicione as labels da clusterização usando a função  ``vq`` que recebe os argumentos df e centroids
+3) Plote os dados com seaborn.
+
