@@ -44,15 +44,7 @@ def compute_centroid_linkage(cluster1,cluster2):
 
 
 def compute_ward_linkage(cluster1,cluster2):
-    combinaçao_cluster = np.concatenate((cluster1, cluster2), axis=0)
-    c_combinaçao = np.mean(combinaçao_cluster, axis=0)
-
-    sum_squared_dist = 0
-    for i in combinaçao_cluster:
-        sum_squared_dist += sum((a - b) ** 2 for a, b in zip(i, c_combinaçao))
-
-    ward_distancia = (sum_squared_dist / len(combinaçao_cluster)) ** 0.5
-    return ward_distancia
+   return None
 
 cluster1 = [[9.0,8.0],[6.0,4.0],[2.0,10.0],[3.0,6.0],[1.0,0.0]]
 cluster2 = [[7.0,4.0],[1.0,10.0],[6.0,10.0],[1.0,6.0],[7.0,1.0]]
