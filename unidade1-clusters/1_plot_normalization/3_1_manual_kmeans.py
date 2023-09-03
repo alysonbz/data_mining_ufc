@@ -15,13 +15,17 @@ import pandas as pd
 ## Reassign observations to nearest  centroid
 # Continue until nothing is moving  or being  reassigned anymore
 
+# Dataset
 x,y = load_pokemon_dataset()
+
+# Organizando os dados
+def create_points(x_cord, y_cord):
+    return [[x, y] for x, y in zip(x_cord, y_cord)]
+
 
 def dist_euclidiana(coordenada,coordenada2):
     return np.sqrt((coordenada[0] - coordenada2[0]) ** 2 + (coordenada[1] - coordenada2[1]) ** 2)
 
-def create_points(x_cord, y_cord):
-    return [[x, y] for x, y in zip(x_cord, y_cord)]
 
 def inicia_centroides(data, n_cluster):
     pontos = np.random.choice(len(data), n_cluster, replace=False)
@@ -62,6 +66,7 @@ def kmeans(df, n_cluster):
 
 plt.scatter(x,y)
 # plt.show()
+
 # inicializando os dados
 data = create_points(x,y)
 num_of_clusters = 2
