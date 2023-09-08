@@ -4,7 +4,7 @@ import pandas as pd
 #from sklearn.cluster import KMeans
 #from sklearn.metrics import silhouette_score
 
-#df = load_pokemon_dataset()
+
 
 
 def set_random_cluster_coordinate(df, num_of_clusters):
@@ -92,21 +92,3 @@ df = pd.DataFrame(data=pokemon, columns=column_names)
 num_of_clusters = 2
 resulting_labels = kmeans(df, num_of_clusters)
 print(resulting_labels)
-
-##Testando qual a quantidade ideal de clusters.
-# Valores possíveis para o número de clusters
-#possible_clusters = range(2, 20)  # Você pode ajustar esse intervalo
-
-# Lista para armazenar os valores de silhouette para cada número de clusters
-#silhouette_scores = []
-
-# Calcula o valor de silhouette para cada número de clusters
-#for num_clusters in possible_clusters:
-    #kmeans = KMeans(n_clusters=num_clusters)
-    #cluster_labels = kmeans.fit_predict(df)
-    #silhouette_avg = silhouette_score(df, cluster_labels)
-    #silhouette_scores.append(silhouette_avg)
-
-# Encontre o número de clusters com o valor mais alto de silhouette
-#best_num_clusters = possible_clusters[np.argmax(silhouette_scores)]
-#print("Melhor número de clusters:", best_num_clusters)
