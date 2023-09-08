@@ -13,43 +13,43 @@ def euclidean_distance(p1, p2):
 # incializando os centroides aleatoriamente
 def initialize_centroids(num_clusters, data):
     indices = np.random.choice(len(data), num_clusters, replace=False)
-    centroids = [data[i] for i in indices]
-    return centroids
+    centroides = [data[i] for i in indices]
+    return centroides
 
 # atribuindo pontos aos clusters com base nos centroides
-def assign_to_clusters(data, centroids):
+def assign_to_clusters(data, centroides):
     cluster_labels = []
     for point in data:
-        distances = [euclidean_distance(point, centroid) for centroid in centroids]
+        distances = [euclidean_distance(point, centroide) for centroide in centroides]
         cluster_labels.append(np.argmin(distances))
     return cluster_labels
 
 # calculando novos centroides
 def update_centroids(data, cluster_labels, num_clusters):
-    new_centroids = []
+    novos_centroides = []
     for i in range(num_clusters):
         cluster_points = [data[j] for j, label in enumerate(cluster_labels) if label == i]
         if cluster_points:
             new_centroid = np.mean(cluster_points, axis=0)
-            new_centroids.append(new_centroid)
-    return new_centroids
+            novos_centroides.append(new_centroid)
+    return novos_centroides
 
 #  convergência
-def check_convergence(centroids, new_centroids, tolerance=1e-4):
-    return all(np.linalg.norm(np.array(c1) - np.array(c2)) < tolerance for c1, c2 in zip(centroids, new_centroids))
+def check_convergence(centroides, novos_centroides, tolerancia=1e-4):
+    return all(np.linalg.norm(np.array(c1) - np.array(c2)) < tolerancia for c1, c2 in zip(centroides, novos_centroides))
 
 #  K-means
 def kmeans(data, num_clusters):
-    centroids = initialize_centroids(num_clusters, data)
+    centroides = initialize_centroids(num_clusters, data)
     converged = False
 
     while not converged:
-        cluster_labels = assign_to_clusters(data, centroids)
-        new_centroids = update_centroids(data, cluster_labels, num_clusters)
-        converged = check_convergence(centroids, new_centroids)
-        centroids = new_centroids
+        cluster_labels = assign_to_clusters(data, centroides)
+        novos_centroides = update_centroids(data, cluster_labels, num_clusters)
+        converged = check_convergence(centroides, novos_centroides)
+        centroides = novos_centroides
 
-    return cluster_labels, centroids
+    return cluster_labels, centroides
 
 
 data = list(zip(x, y))
@@ -58,12 +58,12 @@ data = list(zip(x, y))
 num_clusters = 2
 
 # Execute o K-means
-cluster_labels, centroids = kmeans(data, num_clusters)
+cluster_labels, centroides = kmeans(data, num_clusters)
 
 # Visualização dos clusters
 df_result = pd.DataFrame({"X": x, "Y": y, "Cluster": cluster_labels})
 plt.scatter(df_result['X'], df_result['Y'], c=df_result['Cluster'])
-plt.scatter(np.array(centroids)[:, 0], np.array(centroids)[:, 1], c='black', marker='X', s=100, label='Centroides')  # Adicione esta linha para marcar os centroides
+plt.scatter(np.array(centroides)[:, 0], np.array(centroides)[:, 1], c='black', marker='X', s=100, label='Centroides')
 plt.title('Agrupamento K-means')
-plt.legend(loc='upper right')  # Adicione um rótulo para os centroides
+plt.legend(loc='upper right')
 plt.show()
