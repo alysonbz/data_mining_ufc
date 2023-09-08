@@ -72,3 +72,79 @@ Nesta questão você vai realizar uma clusterização com o kmeans
 2) Em df['cluster_labels'] adicione as labels da clusterização usando a função  ``vq`` que recebe os argumentos df e centroids
 3) Plote os dados com seaborn.
 
+### Questão 3.1
+
+[3_1_manual_kmeans.py](3_1_manual_kmeans.py)
+
+#### Custerização com Kmeans manual
+
+Nesta questão você vai realizar uma clusterização com o kmeans
+
+#### Instruções
+
+1) observando as funções, implemente manualmente a clusterização via k_means
+
+### Questão 4
+
+[4_scaled_data.py](4_scaled_data.py)
+
+#### Normalização whiten
+
+Nesta questão você deve observar os efeitos da normalização pelo divisão pelo desvio padrão
+
+#### Instruções 
+
+1) Utilizando a função ``whiten()`` aplique a normalização no dataset.
+2) plote em linha os dados originais sem a normalização.
+3) plote em linha os dados normalizados.
+4) Exiba as diferenças.
+
+
+### Questão 5
+
+[5_small_number_norm.py](5_small_number_norm.py)
+
+#### Normalização whiten com numeros proximos de zero
+
+Nesta questão você deve observar os efeitos da normalização pelo divisão pelo desvio padrão em numeros proximos de zero
+
+#### Instruções 
+
+1) Utilizando a função ``whiten()`` aplique a normalização no dataset.
+2) plote em linha os dados originais sem a normalização.
+3) plote em linha os dados normalizados.
+4) Exiba as diferenças.
+
+
+### Questão 6
+
+[6_log_normalization.py](6_log_normalization.py)
+
+#### Normalização Logarítimica
+
+Nesta questão você deve observar os efeitos da normalização logarítimica
+
+#### Instruções 
+
+1) Utilizando a função ``describe()`` verifique as características estatística do dataset ``wine``.
+2) Na coluna``Proline``, aplique a normalizaçao logarítmica e atribua o resultado para uma nova coluna, ``Proline_log``.
+3) Exiba a variância da coluna ``Proline``.
+4) Print a variância da coluna ``Proline_log``.
+
+
+### Questão 7
+
+[7_scaling_data.py](7_scaling_data.py)
+
+#### Normalização StandardScaler
+
+Nesta questão você deve observar os efeitos da normalização por media zer e variância unitária
+
+#### Instruções 
+
+1) Importe o módulo ``StandardScaler``.
+3) Instancie StandardScaler .
+4) Em X_norm inclua os dados normalizados.
+5) Print a variância de X
+6) Print a variância de X_Norm
+
