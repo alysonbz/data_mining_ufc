@@ -3,7 +3,7 @@ from matplotlib import pyplot as plt
 import numpy as np
 import pandas as pd
 
-## Anotações
+## Anotações:
 # 1. Especificar um tamanho k de clusters centroides
 # 2. Esses k centroides serão inicializados aleatoriamente dentro do espaço
 # 3. Cada observação é vinculada temporariamente ao centroide mais próximo (distância euclidiana)
@@ -22,15 +22,16 @@ x,y = load_pokemon_dataset()
 def create_points(x_cord, y_cord):
     return [[x, y] for x, y in zip(x_cord, y_cord)]
 
-
+# Função disntância euclidiana
 def dist_euclidiana(coordenada,coordenada2):
     return np.sqrt((coordenada[0] - coordenada2[0]) ** 2 + (coordenada[1] - coordenada2[1]) ** 2)
 
-
+# Iniciailização dos centorides aleatoriamente
 def inicia_centroides(data, n_cluster):
     pontos = np.random.choice(len(data), n_cluster, replace=False)
     centroides = [data[i] for i in pontos]
     return centroides
+
 def clusters(X, centroides):
     # Atribuir cada ponto ao centróide mais próximo
     distancias = np.array([[dist_euclidiana(ponto, centro) for centro in centroides] for ponto in data])
@@ -71,7 +72,7 @@ plt.scatter(x,y)
 data = create_points(x,y)
 n = 2
 
-cluster, centros= kmeans(data,num_of_clusters)
+cluster, centros= kmeans(data,n)
 
 data_final = pd.DataFrame({"X" : [p[0] for p in data], "Y" : [p[1] for p in data], "Cluster" : cluster})
 
