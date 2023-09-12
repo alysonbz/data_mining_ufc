@@ -23,23 +23,6 @@ Nesta questão você visualizar o conjunto de dados via dendrograma
 
 ### Questão 2
 
-[2_Hierarchical_clustering.py](2_Hierarchical_clustering.py)
-
-#### Clusterização Hierárquica
-
-Nesta questão você vai aplicar uma clusterização hierárquica.
-
-#### Instruções 
-
-1) Importe o módulo ``linkage `` e ``fcluster``.
-2) utilize a função linkage com o método ward.
-3) Crie uma nova coluna no dataframe df chamada ``cluster_labels``. Adicione nessa coluna 
-as labels dos clusters que serão calculados com a função ``fcluster`` passe para função os argumentos Z, que representa a matriz de distâncias, 
-a quantadidade de cluster defina igual 2.
-4) Utilizando o módulo ``seaborn`` realize um ``scatterplot``. Defina os arguentos ``x`` = x, ``y``=y e ``hue`` = cluster_labels e ``data`` = df.
-
-### Questão 3
-
 [2_elbow_method.py](2_elbow_method.py)
 
 #### Enontrar a quantidad de clusters para o kmedias
@@ -53,4 +36,6 @@ Nesta questão você vai verificar limitações do kmedias.
 3) Empilhe na lista distortions os valores das somas dos erros (distortion)
 4) crie um dataframe que armazene os valores de distortion para cada k.
 5) Utilizando o módulo ``seaborn`` realize um ``lineplot``. Defina os arguentos ``x`` = num_cluster, ``y``= distortion  e ``hue`` = cluster_labels e ``data`` = elbow_plot.
+
+
 
