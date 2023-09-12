@@ -1,69 +1,65 @@
 from src.utils import load_pokemon_dataset
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
 
-
+# Load the Pokemon dataset
 x, y = load_pokemon_dataset()
 
-# distância Euclidiana entre dois pontos
-def euclidean_distance(p1, p2):
-    return np.sqrt((p1[0] - p2[0]) ** 2 + (p1[1] - p2[1]) ** 2)
+# Data Preparation
+def create_data_points(x_cord, y_cord):
+    return [[x, y] for x, y in zip(x_cord, y_cord)]
 
-# incializando os centroides aleatoriamente
-def initialize_centroids(num_clusters, data):
-    indices = np.random.choice(len(data), num_clusters, replace=False)
-    centroides = [data[i] for i in indices]
-    return centroides
+def euclidean_distance(coord1, coord2):
+    return np.sqrt((coord1[0] - coord2[0]) ** 2 + (coord1[1] - coord2[1]) ** 2)
 
-# atribuindo pontos aos clusters com base nos centroides
-def assign_to_clusters(data, centroides):
-    cluster_labels = []
-    for point in data:
-        distances = [euclidean_distance(point, centroide) for centroide in centroides]
-        cluster_labels.append(np.argmin(distances))
-    return cluster_labels
+def initialize_centroids(data, num_clusters):
+    random_points = np.random.choice(len(data), num_clusters, replace=False)
+    centroids = [data[i] for i in random_points]
+    return centroids
 
-# calculando novos centroides
-def update_centroids(data, cluster_labels, num_clusters):
-    novos_centroides = []
+def assign_to_clusters(data, centroids):
+    distances = np.array([[euclidean_distance(point, centroid) for centroid in centroids] for point in data])
+    return np.argmin(distances, axis=1)
+
+def update_centroids(data, current_clusters, num_clusters):
+    updated_centroids = []
     for i in range(num_clusters):
-        cluster_points = [data[j] for j, label in enumerate(cluster_labels) if label == i]
-        if cluster_points:
-            new_centroid = np.mean(cluster_points, axis=0)
-            novos_centroides.append(new_centroid)
-    return novos_centroides
+        cluster_points = [data[j] for j in range(len(data)) if current_clusters[j] == i]
+        if not cluster_points:
+            updated_centroids.append([0, 0])
+        else:
+            cluster_mean = np.mean(cluster_points, axis=0)
+            updated_centroids.append(cluster_mean)
+    return updated_centroids
 
-#  convergência
-def check_convergence(centroides, novos_centroides, tolerancia=1e-4):
-    return all(np.linalg.norm(np.array(c1) - np.array(c2)) < tolerancia for c1, c2 in zip(centroides, novos_centroides))
+def k_means_clustering(df, num_clusters):
+    centroids = initialize_centroids(df, num_clusters)
 
-#  K-means
-def kmeans(data, num_clusters):
-    centroides = initialize_centroids(num_clusters, data)
-    converged = False
+    while True:
+        current_clusters = assign_to_clusters(df, centroids)
 
-    while not converged:
-        cluster_labels = assign_to_clusters(data, centroides)
-        novos_centroides = update_centroids(data, cluster_labels, num_clusters)
-        converged = check_convergence(centroides, novos_centroides)
-        centroides = novos_centroides
+        new_centroids = update_centroids(df, current_clusters, num_clusters)
 
-    return cluster_labels, centroides
+        if np.all([np.array(centroids[i]) == np.array(new_centroids[i]) for i in range(num_clusters)]):
+            break
+        centroids = new_centroids
 
+    return current_clusters, centroids
 
-data = list(zip(x, y))
+# Visualize the data
+plt.scatter(x, y)
 
-# Número de clusters
-num_clusters = 2
+# Prepare the data
+data = create_data_points(x, y)
+num_of_clusters = 3
 
-# Execute o K-means
-cluster_labels, centroides = kmeans(data, num_clusters)
+# Perform K-means clustering
+clusters, cluster_centers = k_means_clustering(data, num_of_clusters)
 
-# Visualização dos clusters
-df_result = pd.DataFrame({"X": x, "Y": y, "Cluster": cluster_labels})
-plt.scatter(df_result['X'], df_result['Y'], c=df_result['Cluster'])
-plt.scatter(np.array(centroides)[:, 0], np.array(centroides)[:, 1], c='black', marker='X', s=100, label='Centroides')
-plt.title('Agrupamento K-means')
-plt.legend(loc='upper right')
+# Create a DataFrame with cluster assignments
+data_final = pd.DataFrame({"X": [p[0] for p in data], "Y": [p[1] for p in data], "Cluster": clusters})
+
+# Visualize the clustered data
+plt.scatter(data_final['X'], data_final['Y'], c=data_final['Cluster'])
 plt.show()

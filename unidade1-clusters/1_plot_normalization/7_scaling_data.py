@@ -1,8 +1,9 @@
 import pandas as pd
-from src.utils import load_wine_datasets
+
+from src.utils import load_wine_dataset
 from sklearn.preprocessing import StandardScaler
 
-wine = load_wine_datasets()
+wine = load_wine_dataset()
 X = wine.drop(['Quality'], axis=1)
 
 # Create the scaler

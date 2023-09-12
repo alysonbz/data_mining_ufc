@@ -1,18 +1,19 @@
-import matplotlib.pyplot as plt
-# Import the whiten function
-from scipy.cluster.vq import whiten
+import numpy as np
+from src.utils import load_wine_dataset
+import pandas as pd
 
-# Prepare data
-rate_cuts = [0.0025, 0.001, -0.0005, -0.001, -0.0005, 0.0025, -0.001, -0.0015, -0.001, 0.0005]
+wine = load_wine_dataset()
 
-# Use the whiten() function to standardize the data
-scaled_data = whiten(rate_cuts)
+pd.set_option('display.max_columns', None)
 
-# Plot original data
-plt.plot(rate_cuts, label='original')
+#print as caractéristicas estatísticas do dataset wine
+print(wine.describe())
 
-# Plot scaled data
-plt.plot(scaled_data, label='scaled')
+## Aplique a função de nomarlização logarítmica na coluna Proline
+wine['Proline_normal'] = np.log(wine['Proline'])
+#
+# Print a variância da coluna proline
+print(wine['Proline'].var())
 
-plt.legend()
-plt.show()
+# print a variância da coluna proline normalizada
+print(wine['Proline_normal'].var())
