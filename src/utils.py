@@ -19,4 +19,3 @@ def load_fifa_dataset():
 def load_comic_con_dataset():
     return pd.read_csv('../datasets/comic_con.csv')
 
-
