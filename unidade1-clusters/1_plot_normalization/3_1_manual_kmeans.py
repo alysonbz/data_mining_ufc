@@ -69,7 +69,7 @@ plt.scatter(x,y)
 
 # inicializando os dados
 data = create_points(x,y)
-num_of_clusters = 2
+n = 2
 
 cluster, centros= kmeans(data,num_of_clusters)
 
