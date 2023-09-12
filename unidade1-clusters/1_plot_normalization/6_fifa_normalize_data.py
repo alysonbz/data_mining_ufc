@@ -1,14 +1,19 @@
-import matplotlib.pyplot as plt
-from src.utils import load_fifa_dataset
-from scipy.cluster.vq import whiten
+import numpy as np
+from src.utils import load_wine_dataset
+import pandas as pd
 
-fifa = load_fifa_dataset()
+wine = load_wine_dataset()
 
-# Scale wage and value
-fifa['scaled_wage'] = ____(fifa[____])
-fifa['scaled_value'] = ____(fifa[____])
+pd.set_option('display.max_columns', None)
 
+# Print the statistical characteristics of the dataset wine
+print(wine.describe())
 
-# Plot the two columns in a scatter plot
-fifa.__(x=__, y=__, kind='scatter')
-plt.__()
+## Apply the logarithmic normalization to the 'Proline' column
+wine['Proline'] = np.log(wine['Proline'])
+
+# Print the variance of the 'Proline' column
+print(wine['Proline'].var())
+
+# Print the variance of the normalized 'Proline' column
+print(wine['Proline'].var())
