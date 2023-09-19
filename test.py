@@ -9,10 +9,3 @@ print(resp)
 word_regex = r'[a-z]\w+'
 resp = re.split(word_regex,'4Semana Quente! De Aula')
 print(resp)'''
-import re
-pattern1 = '(\w+|\?|!)'
-pattern2 = '(\w+|#\d+|\?\!)'
-pattern3 = '(#\d\w+\?!)'
-pattern4 = '\s+'
-print(re.findall(pattern1,"SOLDIER #1: Found them? In mercea? The coconut's tropical"))
-from nltk.tokenize import sent_tokenize
