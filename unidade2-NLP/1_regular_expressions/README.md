@@ -113,3 +113,35 @@ Usar compreensões de lista aqui acelerará seus cálculos. Por exemplo: ``my_li
 5) Use ``t_line`` como sua variável iteradora para iterar sobre ``tokenized_lines`` e, em seguida, a função ``len()`` para calcular o tamanho da linha.
 6) Trace um histograma de ``line_num_words`` usando ``plt.hist()``. Não se esqueça de usar ``plt.show()`` também para exibir o gráfico.
 
+
+## Atividade  regular expression 
+
+1. **Contagem de Correspondências:**
+   Escreva um programa que conte quantas vezes a palavra "Python" aparece em uma determinada string usando expressões regulares.
+
+2. **Validação de E-mail:**
+   Crie uma função que valide se um dado texto representa um endereço de e-mail válido usando expressões regulares.
+
+3. **Extração de Números de Telefone:**
+   Escreva um programa que extraia todos os números de telefone de um texto usando expressões regulares.
+
+4. **Substituição de Palavras:**
+   Crie uma função que substitua todas as ocorrências de "gato" por "cachorro" em um texto usando expressões regulares.
+
+5. **Extração de URLs:**
+   Escreva um programa que extraia todas as URLs de um texto usando expressões regulares.
+
+6. **Verificação de Senha Segura:**
+   Crie uma função que valide se uma senha é segura ou não usando expressões regulares. Considere uma senha segura se tiver pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas, números e caracteres especiais.
+
+7. **Extração de Palavras:**
+   Escreva uma função que extraia todas as palavras de uma string usando expressões regulares.
+
+8. **Validação de Data:**
+   Crie uma função que valide se uma data está no formato "dd/mm/aaaa" usando expressões regulares.
+
+9. **Extração de Nomes Próprios:**
+   Escreva um programa que extraia todos os nomes próprios (palavras iniciadas por maiúsculas) de um texto usando expressões regulares.
+
+10. **Contagem de Vogais:**
+    Crie uma função que conte o número de vogais em uma string usando expressões regulares.
