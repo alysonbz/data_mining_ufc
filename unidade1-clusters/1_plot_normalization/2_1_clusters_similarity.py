@@ -60,7 +60,6 @@ def compute_ward_linkage(cluster1,cluster2):
     return dist_quadratica
 
 
-
 cluster1 = [[9.0,8.0],[6.0,4.0],[2.0,10.0],[3.0,6.0],[1.0,0.0]]
 cluster2 = [[7.0,4.0],[1.0,10.0],[6.0,10.0],[1.0,6.0],[7.0,1.0]]
 
