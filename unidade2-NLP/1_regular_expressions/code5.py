@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import re
 from nltk.tokenize import regexp_tokenize
-from NLP.src.nlp_utils import get_sample_Santo_Graal
+from src.utils import get_sample_Santo_Graal
 
 # Split the script into lines: lines
 holy_grail = get_sample_Santo_Graal()
