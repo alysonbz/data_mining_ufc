@@ -1,6 +1,7 @@
 # Import necessary modules
 from nltk.tokenize import sent_tokenize, word_tokenize
-from NLP.src.nlp_utils import get_sample_Santo_Graal
+from src.utils import get_sample_Santo_Graal
+
 
 # Split scene_one into sentences: sentences
 scene_one = get_sample_Santo_Graal()
