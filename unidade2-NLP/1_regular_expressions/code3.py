@@ -13,7 +13,7 @@ if match:
 else:
     print("Palavra 'coconuts' não encontrada.")
 
-print (match)
+print(match)
 
 # Write a regular expression to search for anything in square brackets: pattern1
 pattern1 = r"\[.*?\]"
