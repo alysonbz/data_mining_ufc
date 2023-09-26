@@ -10,6 +10,7 @@ def cont_word(text):
     resp = re.findall(regex, text)
     return len(resp)
 
+
 text = "A liguagem de programação em Python é a mais utilizada do mundo," \
        " fazendo de Python também a principal ferramenta para pesquisa de ML. " \
        "Ou seja, python é presente e futuro."
@@ -27,6 +28,7 @@ def valid_email(email):
     else:
         return 'email inválido!'
 
+
 print('\nQuestão 2 ------------------------')
 print('Email: abc@alu.ufc.br\n', valid_email('abc@alu.ufc.br'))
 print('Email: def@gmail.com\n', valid_email('def@gmail.com'))
@@ -40,6 +42,7 @@ def extrair_telefone(numero):
     padrao = r'\(?\d{2}\)?[-\s]?\d{9}'
     return re.findall(padrao, numero)
 
+
 print('\nQuestão 3 ------------------------')
 texto = 'Meu número é (85) 991929394. Também pode ser escrito como 85-991929394 ou 85 991929394.'
 print('Texto:', texto)
@@ -51,6 +54,7 @@ print(extrair_telefone(texto))
 
 def substituir_palavra(texto, p_antiga, p_nova):
     return re.sub(p_antiga, p_nova, texto)
+
 
 texto = 'eu tenho um gato.'
 p_antiga = 'gato'
@@ -69,6 +73,7 @@ print(substituir_palavra(texto, p_antiga, p_nova))
 def extrair_urls(texto):
     padrao = r'https://\S+|www.\S+'
     return re.findall(padrao, texto)
+
 
 texto = 'O url do portal é https://si3.ufc.br/sigaa. O do YouTube é www.youtube.com.'
 
@@ -163,6 +168,7 @@ def contar_vogais(texto):
 texto = 'A liguagem de programação em Python é a mais utilizada do mundo,' \
         ' fazendo de Python também a principal ferramenta para pesquisa de ML. ' \
         'Ou seja, python é presente e futuro.'
+
 print('\nQuestão 10 ------------------------')
 print('Texto:', texto)
 numero_de_vogais = contar_vogais(texto)
