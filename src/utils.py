@@ -30,7 +30,7 @@ def get_sample_Santo_Graal():
 def get_tweets_sample():
  return ['This is the best #nlp exercise ive found online! #python',
   '#NLP is super fun! <3 #learning',
-  'Thanks @Atlantico :) #nlp #python']
+  'Thanks @ufc :) #nlp #python']
 
 def get_sample_article():
 
