@@ -2,13 +2,14 @@
 from collections import Counter
 from nltk.tokenize import word_tokenize
 
-from NLP.src.nlp_utils import get_sample_article
+from src.utils import get_sample_article
 
 
 article = get_sample_article()
 
 # Tokenize the article: tokens
 tokens = word_tokenize(article)
+print(tokens)
 
 # Convert the tokens into lowercase: lower_tokens
 lower_tokens = [t.lower() for t in tokens]

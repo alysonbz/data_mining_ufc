@@ -1,4 +1,7 @@
 # Import WordNetLemmatizer and Counter
+
+import nltk
+nltk.download('wordnet')
 from nltk.stem import WordNetLemmatizer
 from collections import Counter
 from src.utils import get_wiki_article_lower_tokens, get_english_stop_words
@@ -18,10 +21,11 @@ wordnet_lemmatizer = WordNetLemmatizer()
 
 # Lemmatize all tokens into a new list: lemmatized
 lemmatized = [wordnet_lemmatizer.lemmatize(t) for t in no_stops]
+print(lemmatized)
 
 # Create the bag-of-words: bow
 bow = Counter(lemmatized)
-
+print(bow)
 # Print the 10 most common tokens
 print(bow.most_common(10))
 
