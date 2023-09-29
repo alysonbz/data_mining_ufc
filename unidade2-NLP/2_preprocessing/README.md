@@ -116,3 +116,13 @@ Determine os termos significativos para seu corpus aplicando o tf-idf com gensim
 3) Print os 5 primeiros elementos de ``tfidf_weights``
 4) ordene ``tfidf_weights`` em ordem decrescente.
 5) utilizando ``dictionary``, exiba os 5 maiores pesos junto com seus respectivos tokens.
+
+
+## Atividade para mineração de Texto
+
+No arquivo [text_mining.py](text_mining.py) você deve realiza a mineração do texto solicitado.
+Aplique o pré-processamento necessário e e crie funções para calcular TF, DF, IDF, TF-IDF.
+Coniderem uma tokenizção por sentença inicialmente, em que casa sentença, posteriormente será uma lista de tokens.
+Cada lista de token será um documento.
+Crie um dataframe final com cada sentença em uma linha com a matriz TF-IDF.
+salve o dataframe em formato .csv para um futuro processamento.
