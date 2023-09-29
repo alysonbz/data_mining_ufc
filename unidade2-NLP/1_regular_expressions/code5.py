@@ -5,20 +5,23 @@ from src.utils import get_sample_Santo_Graal
 
 # Split the script into lines: lines
 holy_grail = get_sample_Santo_Graal()
-lines = holy_grail.___(___)
+lines = holy_grail.split('\n')  # Split the script into lines using newline character
 
 # Replace all script lines for speaker
 pattern = "[A-Z]{2,}(\s)?(#\d)?([A-Z]{2,})?:"
-lines = [re.__(pattern, __, __) for l in __]
+lines = [re.sub(pattern, '', line) for line in lines]
 
 # Tokenize each line: tokenized_lines
-tokenized_lines = [regexp_tokenize(__,__) for s in __]
+tokenized_lines = [regexp_tokenize(line, pattern=r'\s+', gaps=True) for line in lines]
 
 # Make a frequency list of lengths: line_num_words
-line_num_words = [___ for t_line in tokenized_lines]
+line_num_words = [len(line) for line in tokenized_lines]
 
 # Plot a histogram of the line lengths
-___
+plt.hist(line_num_words, bins=20, edgecolor='k')
+plt.title('Histograma')
+plt.xlabel('Numero de linhas')
+plt.ylabel('Frequencia')
 
 # Show the plot
-___
+plt.show()
