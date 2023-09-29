@@ -18,7 +18,7 @@ bow_doc = sorted(doc, key=lambda w: w[1], reverse=True)
 
 # Print the top 5 words of the document alongside the count
 for word_id, word_count in bow_doc[:5]:
-    print("The token ",__,"appears ",__ , "times")
+    print("The token ",__,"appears ",__, "times")
 
 # Create the defaultdict: total_word_count
 total_word_count = defaultdict(int)

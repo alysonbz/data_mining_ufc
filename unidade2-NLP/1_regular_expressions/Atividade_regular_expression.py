@@ -151,6 +151,6 @@ def vogais(text):
     vogais = re.findall(regex, text)
     return print(f'Este é o número de vogais no texto: {len(vogais)}')
 
-texto = "Est a é uma frase de exemplo."
+texto = "Esta é uma frase de exemplo."
 
 vogais(texto)
