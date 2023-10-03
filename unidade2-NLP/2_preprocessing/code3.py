@@ -1,11 +1,6 @@
 # Import Dictionary
-<<<<<<< HEAD
-___
-from src.utils import get_pre_process_wiki_articles
-=======
 from gensim.corpora.dictionary import Dictionary
 from NLP.src.nlp_utils import get_pre_process_wiki_articles
->>>>>>> 78b4028 (atualização de algumas atividades das últimas aulas rebase)
 
 # Create a Dictionary from the articles: dictionary
 articles = get_pre_process_wiki_articles()

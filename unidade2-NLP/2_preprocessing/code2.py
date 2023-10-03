@@ -1,13 +1,8 @@
 # Import WordNetLemmatizer and Counter
-<<<<<<< HEAD
-__
-__
-=======
 import nltk
 nltk.download('wordnet')
 from collections import Counter
 from nltk.stem import WordNetLemmatizer
->>>>>>> 78b4028 (atualização de algumas atividades das últimas aulas rebase)
 from src.utils import get_wiki_article_lower_tokens, get_english_stop_words
 
 
