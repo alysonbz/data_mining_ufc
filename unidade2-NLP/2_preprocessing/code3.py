@@ -1,5 +1,5 @@
 # Import Dictionary
-___
+from gensim.corpora.dictionary import Dictionary
 from NLP.src.nlp_utils import get_pre_process_wiki_articles
 
 # Create a Dictionary from the articles: dictionary
