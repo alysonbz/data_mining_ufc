@@ -20,3 +20,4 @@ print(re.split(spaces, my_string))
 # Find all digits in my_string and print the result
 digits = r"\d"
 print(re.findall(digits, my_string))
+
