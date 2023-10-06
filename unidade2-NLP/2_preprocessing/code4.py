@@ -35,3 +35,4 @@ sorted_word_count = sorted(total_word_count.items(), key=lambda w: w[1], reverse
 # Print the top 5 words across all documents alongside the count
 for word_id, word_count in sorted_word_count[:5]:
     print(dictionary[word_id], word_count)
+
