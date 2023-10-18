@@ -17,7 +17,7 @@ doc = corpus[4]
 bow_doc = sorted(doc, key=lambda w: w[1], reverse=True)
 
 # Print the top 5 words of the document alongside the count
-for word_id, word_count in bow_doc[:5]:
+for word_id, word_count in bow_doc[:5]: # loop pelas cinco primeiras tuplas da lista
     print("The token ",dictionary[word_id],"appears ",word_count , "times")
 
 # Create the defaultdict: total_word_count
