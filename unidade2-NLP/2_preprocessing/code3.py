@@ -1,6 +1,6 @@
 # Import Dictionary
 ___
-from NLP.src.nlp_utils import get_pre_process_wiki_articles
+from src.utils import get_pre_process_wiki_articles
 
 # Create a Dictionary from the articles: dictionary
 articles = get_pre_process_wiki_articles()

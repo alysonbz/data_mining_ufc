@@ -3,7 +3,6 @@
 
 Esse documento exibe as descrições das questões a serem resolvidas em sala
 
-##  Aula 2
 
 ### Questão 1
 

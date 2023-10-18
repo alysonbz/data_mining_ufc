@@ -1,6 +1,9 @@
 import pandas as pd
 import matplotlib as plt
 from nltk.tokenize import word_tokenize
+from sklearn.model_selection import train_test_split
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
 from gensim.corpora.dictionary import Dictionary
 from nltk.stem import WordNetLemmatizer
 
@@ -20,6 +23,7 @@ def load_fifa_dataset():
     df = pd.read_csv('../datasets/fifa_18_dataset.csv')
     df = df[['sliding_tackle','aggression']].astype(float)
     return df
+
 def load_comic_con_dataset():
     return pd.read_csv('../datasets/comic_con.csv')
 
@@ -11644,4 +11648,23 @@ def get_english_stop_words():
              'wouldn',
              '']
 
+def load_fake_news_dataset():
+    return pd.read_csv('../dataset/fake_or_real_news.csv')
 
+def get_count_vectorizer_fake_news_dataset():
+    df = load_fake_news_dataset()
+    y = df['label']
+    X_train, X_test, y_train, y_test = train_test_split(df["text"], y, test_size=0.3, random_state=53)
+    count_vectorizer = CountVectorizer(stop_words='english')
+    count_train = count_vectorizer.fit_transform(X_train.values)
+    count_test = count_vectorizer.transform(X_test)
+    return count_train,count_test , count_vectorizer ,y_train,y_test
+
+def get_tfidf_fake_newes_dataset():
+    df = load_fake_news_dataset()
+    y = df['label']
+    X_train, X_test, y_train, y_test = train_test_split(df["text"], y, test_size=0.3, random_state=53)
+    tfidf_vectorizer = TfidfVectorizer(stop_words="english")
+    tfidf_train = tfidf_vectorizer.fit_transform(X_train)
+    tfidf_test = tfidf_vectorizer.transform(X_test)
+    return tfidf_train, tfidf_test , tfidf_vectorizer,y_train,y_test

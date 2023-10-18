@@ -1,7 +1,7 @@
 # Import WordNetLemmatizer and Counter
 __
 __
-from NLP.src.nlp_utils import get_wiki_article_lower_tokens, get_english_stop_words
+from src.utils import get_wiki_article_lower_tokens, get_english_stop_words
 
 
 lower_tokens = get_wiki_article_lower_tokens()
