@@ -1,5 +1,5 @@
 from gensim.corpora.dictionary import Dictionary
-from src.utils import get_pre_process_wiki_articles
+from NLP.src.nlp_utils import get_pre_process_wiki_articles
 from gensim.models import TfidfModel
 
 # Create a Dictionary from the articles: dictionary
@@ -13,18 +13,16 @@ corpus = [dictionary.doc2bow(article) for article in articles]
 doc = corpus[4]
 
 # Create a new TfidfModel using the corpus: tfidf
-tfidf = TfidfModel(corpus)
-
+tfidf = __(__)
 # Calculate the tfidf weights of doc: tfidf_weights
-tfidf_weights = tfidf[doc]  # Use 'tfidf[doc]' to calculate the TF-IDF weights for the document
+tfidf_weights = __[__]
 
 # Print the first five weights
-for term_id, weight in tfidf_weights[:5]:
-    print("Term ID:", term_id, "TF-IDF Weight:", weight)
+print(___)
 
-# Sort the TF-IDF weights from highest to lowest: sorted_tfidf_weights
-sorted_tfidf_weights = sorted(tfidf_weights, key=lambda x: x[1], reverse=True)
+# Sort the weights from highest to lowest: sorted_tfidf_weights
+sorted_tfidf_weights = ___
 
 # Print the top 5 weighted words
 for term_id, weight in sorted_tfidf_weights[:5]:
-    print("Term ID:", term_id, "TF-IDF Weight:", weight)
+    print(__,__)
