@@ -23,11 +23,11 @@ def BP_level(BP):
         elif bp<130:
             PBP_level.append('elevated')
         elif bp<140:
-            PBP_level.append('hypert_s1')
+            PBP_level.append('hypert_s1')   #Hypertension stage 1
         elif bp<180:
             PBP_level.append('hypert_s2')
         else:
-            PBP_level.append('hypert_crisis')
+            PBP_level.append('hypert_crisis')   #Hypertension crise
     return pd.Series(PBP_level)
 def Cholesterol_level(cholesterol):
     clt_level = []
@@ -47,6 +47,13 @@ def FastingBS_level(bs):
         else:
             FastBS.append('normal')
     return pd.Series(FastBS)
+def FastingBS_level(bs):
+    FastBS = []
+    for b in bs:
+        if b==1:
+            FastBS.append('diabetic')
+        else:
+            FastBS.append('normal')
     return pd.Series(FastBS)
 def level_heart_rate(age,max_heart):
     level_heart = []
@@ -123,7 +130,8 @@ kmeans = KMeans(n_clusters=num_clusters)
 labels = kmeans.fit(X)
 df['cluster'] = labels
 plt.scatter(X[:, 0], X[:, 1], c=labels, cmap='viridis')
-plt.scatter(kmeans.centroids[:, 0], kmeans.centroids[:, 1], c='red', marker='X')
+plt.s
+catter(kmeans.centroids[:, 0], kmeans.centroids[:, 1], c='red', marker='X')
 plt.show()
 
 
