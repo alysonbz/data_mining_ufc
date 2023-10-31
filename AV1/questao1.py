@@ -130,8 +130,7 @@ kmeans = KMeans(n_clusters=num_clusters)
 labels = kmeans.fit(X)
 df['cluster'] = labels
 plt.scatter(X[:, 0], X[:, 1], c=labels, cmap='viridis')
-plt.s
-catter(kmeans.centroids[:, 0], kmeans.centroids[:, 1], c='red', marker='X')
+plt.scatter(kmeans.centroids[:, 0], kmeans.centroids[:, 1], c='red', marker='X')
 plt.show()
 
 
