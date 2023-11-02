@@ -1,7 +1,7 @@
 import numpy as np
 from src.utils import load_wine_dataset
 import pandas as pd
-
+#começo
 wine = load_wine_dataset()
 
 pd.set_option('display.max_columns', None)
