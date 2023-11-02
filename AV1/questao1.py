@@ -23,11 +23,11 @@ def BP_level(BP):
         elif bp<130:
             PBP_level.append('elevated')
         elif bp<140:
-            PBP_level.append('hypert_s1')   #Hypertension stage 1
+            PBP_level.append('hypert_s1')
         elif bp<180:
             PBP_level.append('hypert_s2')
         else:
-            PBP_level.append('hypert_crisis')   #Hypertension crise
+            PBP_level.append('hypert_crisis')
     return pd.Series(PBP_level)
 def Cholesterol_level(cholesterol):
     clt_level = []
@@ -47,13 +47,6 @@ def FastingBS_level(bs):
         else:
             FastBS.append('normal')
     return pd.Series(FastBS)
-def FastingBS_level(bs):
-    FastBS = []
-    for b in bs:
-        if b==1:
-            FastBS.append('diabetic')
-        else:
-            FastBS.append('normal')
     return pd.Series(FastBS)
 def level_heart_rate(age,max_heart):
     level_heart = []
