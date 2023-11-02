@@ -1,3 +1,6 @@
+#classe sobre kmeans
+
+
 import random
 import numpy as np
 from src.utils import load_pokemon_dataset
