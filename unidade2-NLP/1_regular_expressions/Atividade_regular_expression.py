@@ -3,7 +3,7 @@ import re
 
 #1. **Contagem de Correspondências:**
 #   Escreva um programa que conte quantas vezes a palavra "Python" aparece em uma determinada string usando expressões regulares.
-
+#comeco
 def cont_word(text):
     regex = "Python"
     resp = re.findall(regex,text)
