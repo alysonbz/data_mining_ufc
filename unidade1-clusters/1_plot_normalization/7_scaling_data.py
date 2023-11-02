@@ -4,7 +4,7 @@ from sklearn.preprocessing import StandardScaler
 import pandas as pd
 wine = load_wine_dataset()
 X = wine.drop(['Quality'],axis=1)
-
+#comeco
 # Create the scaler
 scaler = StandardScaler()
 
