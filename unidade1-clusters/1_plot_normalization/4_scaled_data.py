@@ -1,21 +1,21 @@
 import matplotlib.pyplot as plt
-# Import the whiten function
+# Importe a função whiten
 from scipy.cluster.vq import whiten
 
-goals_for = [4,3,2,3,1,1,2,0,1,4]
+goals_for = [4, 3, 2, 3, 1, 1, 2, 0, 1, 4]
 
-# Use the whiten() function to standardize the data
-scaled_data = whiten(goals_for)
-print(scaled_data)
+# Use a função whiten() para padronizar os dados
+dados_padronizados = whiten(goals_for)
+print(dados_padronizados)
 
-# Plot original data
+# Plote os dados originais
 plt.plot(goals_for, label='original')
 
-# Plot scaled data
-plt.plot(scaled_data, label='scaled')
+# Plote os dados padronizados
+plt.plot(dados_padronizados, label='padronizado')
 
-# Show the legend in the plot
+# Mostre a legenda no gráfico
 plt.legend()
 
-# Display the plot
+# Exiba o gráfico
 plt.show()
