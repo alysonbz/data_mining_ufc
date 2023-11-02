@@ -12,17 +12,20 @@ from nltk.tokenize import word_tokenize
 # Função para pré-processar e tokenizar o texto
 def preprocess_and_tokenize(text):
     if isinstance(text, str):
-        # Remove caracteres não alfanuméricos e transforma em minúsculas
-        text = re.sub(r'[^a-zA-Z\s]', '', text.lower())
-
+        # Removendo caracteres
+        text = re.sub(r'[^a-zA-Z]', ' ', text)
         # Tokenização
         tokens = word_tokenize(text)
-
-        # Redução das palavras à raiz e remoção de palavras com menos de 2 caracteres
+        # Transformando tudo em minúsculo
+        tokens = [word.lower() for word in tokens]
+        # Retirando possíveis espaços do início e do final da palavra
+        tokens = [word.strip() for word in tokens]
+        # Reduzindo palavras à raiz
         ps = PorterStemmer()
-        tokens = [ps.stem(word) for word in tokens if len(word) > 2]
-
-        # Remoção de stop words
+        tokens = [ps.stem(word) for word in tokens]
+        # Removendo palavras menores que 2 caracteres
+        tokens = [word for word in tokens if len(word) > 2]
+        # Removendo stop words
         stop_words = set(stopwords.words('english'))
         tokens = [word for word in tokens if word not in stop_words]
     else:
@@ -33,6 +36,8 @@ def preprocess_and_tokenize(text):
 # TESTE DA FUNÇÃO ------------------------------------------------------------------------------------------------------
 
 df = pd.read_csv('C:/Users/Thays Ferreira/Downloads/steam_reviews.csv')
+
+df = df.head(7000)
 
 reviews = df['review_text']
 
