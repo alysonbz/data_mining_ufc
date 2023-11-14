@@ -1,8 +1,6 @@
 import pandas as pd
-import nltk
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
-import string
 import unicodedata
 import matplotlib.pyplot as plt
 file_path = r'C:\Users\mateu\Downloads\archive (2)\Corona_NLP_train.csv'
@@ -10,7 +8,7 @@ data = pd.read_csv(file_path, encoding='ISO-8859-1')
 colunas_principais = ['OriginalTweet']
 data = data[colunas_principais]
 
-# Função para remover stopwords
+
 def stop_words_function(df, column_name, new_column_name):
     stop_words = set(stopwords.words('english'))
     df[new_column_name] = df[column_name].apply(lambda x: ' '.join([word for word in x.split() if word.lower() not in stop_words]))
@@ -41,8 +39,8 @@ def preprocess(df, column_text):
     df = tokenization(df, column_text + '_cleaned_no_stopwords', column_text + '_tokenized')
     return df
 
-df = pd.read_csv(file_path, encoding='ISO-8859-1') # Carregue seu DataFrame aqui
-column_text = 'OriginalTweet'  # Substitua pelo nome da coluna de texto
+df = pd.read_csv(file_path, encoding='ISO-8859-1')
+column_text = 'OriginalTweet'
 
 df = preprocess(df, column_text)
 def extract_first_five_tokens(df, column_name):

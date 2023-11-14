@@ -15,7 +15,7 @@ def generate_numeric_attributes(df, text_column):
         filtered_words = [word for word in words if word.lower() not in stop_words]
         return ' '.join(filtered_words)
 
-    # Vetorização Count e TF-IDF
+    # Vetorização Count e TF-IDF e cria matrizes
     count_vectorizer = CountVectorizer()
     count_matrix = count_vectorizer.fit_transform(preprocessed_data['OriginalTweet_cleaned_no_stopwords'])
     count_features = count_vectorizer.get_feature_names_out()
@@ -48,7 +48,7 @@ def generate_numeric_attributes(df, text_column):
     plt.figure(figsize=(12, 6))
     plt.subplot(1, 2, 1)
     plt.barh(top_10_count_terms, count_means[top_10_count_indices], color='blue')
-    plt.title("Top 10 Termos com Maior Count")
+    plt.title("Top 10 Termos com DF ")
     plt.xlabel("Count")
     plt.ylabel("Termo")
 
