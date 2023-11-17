@@ -14,7 +14,7 @@ chess_pieces_image_gray = rgb2gray(chess_pieces_image)
 show_image(chess_pieces_image,'Original image')
 
 # Obtain the optimal threshold value with otsu
-thresh = 0
+thresh = threshold_otsu(chess_pieces_image_gray)
 
 # Apply thresholding to the image
 binary = chess_pieces_image_gray > thresh
