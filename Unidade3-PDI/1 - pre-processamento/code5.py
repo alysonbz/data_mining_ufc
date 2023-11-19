@@ -1,4 +1,4 @@
-from skimage.color import rgb2gray
+
 from src.pdi_utils import load_page_image, show_image, manual_rgb2gray
 from skimage.filters import threshold_otsu, threshold_local
 
@@ -9,7 +9,7 @@ page_image = manual_rgb2gray(load_page_image())
 show_image(page_image, 'Global Thresholding')
 
 # Obtain the optimal Otsu global threshold value
-global_thresh = threshold_otsu(page_image)
+global_thresh = threshold_otsu(page_image) #calcula o limiar otimo com metodo de otsu
 
 # Obtain the binary image by applying global thresholding
 binary_global = page_image > global_thresh
