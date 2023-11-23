@@ -1,44 +1,49 @@
-from src.pdi_utils import load_soaps_image, show_image
-import matplotlib.pyplot as plt
-from pynput import mouse
+from src.pdi_utils import load_soaps_image
+import cv2
 import numpy as np
-from skimage import segmentation
+from skimage import segmentation, color
 
+# Função de callback para o evento de clique do mouse
+def on_mouse_click(event, x, y, flags, param):
+    if event == cv2.EVENT_LBUTTONDOWN:
+        seed = (y, x)  # As coordenadas são invertidas para corresponder ao formato (linha, coluna) da matriz
+        region_growing(seed)
 
-# Carregar a imagem
-image = load_soaps_image()
+# Função de crescimento de região
+def region_growing(seed):
+    # Convertendo a imagem para escala de cinza
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-# Variáveis globais para armazenar as coordenadas da semente
-seed_x = None
-seed_y = None
+    # Aplicando o algoritmo de crescimento de regiões
+    labels = segmentation.flood(gray, seed, tolerance=10)
 
-# Função para lidar com o clique do mouse
-def on_click(x, y, button, pressed):
-    global seed_x, seed_y
-    if pressed:
-        seed_x, seed_y = int(x), int(y)
-        return False  # Encerrar a captura de eventos após o clique
+    # Criando uma máscara com o objeto segmentado
+    mask = (labels == labels[seed])
 
-# Capturar o clique do mouse
-with mouse.Listener(on_click=on_click) as listener:
-    plt.imshow(image)
-    plt.title('Clique para escolher a semente')
-    plt.show()
-    listener.join()
+    # Convertendo a máscara para o formato uint8
+    mask = mask.astype(np.uint8) * 255
 
-###PROBLEMA###
-# Verificar se as coordenadas da semente estão dentro dos limites da imagem
-if seed_x is not None and seed_y is not None and 0 <= seed_x < image.shape[1] and 0 <= seed_y < image.shape[0]:
-    # Realizar a segmentação por crescimento de regiões
-    seeds = np.zeros_like(image[:, :, 0])
-    seeds[seed_y, seed_x] = 1
-    segmentation_result = segmentation.flood(image, (seed_y, seed_x), connectivity=1, seed_map=seeds)
+    # Extraindo o objeto segmentado
+    segmented_object = cv2.bitwise_and(img, img, mask=mask)
 
-    # Criar uma imagem preta e preencher com o objeto segmentado
-    segmented_image = np.zeros_like(image)
-    segmented_image[segmentation_result] = image[segmentation_result]
+    # Exibindo a imagem resultante
+    cv2.imshow("Segmented Image", segmented_object)
 
-    # Exibir a imagem segmentada
-    show_image(segmented_image, 'Objeto Segmentado')
-else:
-    print('Coordenadas da semente não capturadas ou fora dos limites da imagem. Tente novamente.')
+# Carregando a imagem
+img = load_soaps_image()
+
+# Criando uma janela para exibir a imagem
+cv2.namedWindow("Original Image")
+cv2.imshow("Original Image", img)
+
+# Definindo a função de callback do mouse
+cv2.setMouseCallback("Original Image", on_mouse_click)
+
+# Aguardando até que a tecla 'ESC' seja pressionada
+while True:
+    key = cv2.waitKey(1) & 0xFF
+    if key == 27:
+        break
+
+# Fechando todas as janelas
+cv2.destroyAllWindows()

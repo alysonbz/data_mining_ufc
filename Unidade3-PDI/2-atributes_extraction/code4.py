@@ -22,4 +22,3 @@ show_image(xray_image_eq, 'Resulting image')
 plt.title('Histogram of Equalized Image')
 plt.hist(xray_image_eq.ravel(), bins=256)
 plt.show()
-
