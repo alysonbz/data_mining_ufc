@@ -66,7 +66,7 @@ Plote os 10 termos com maior TF-IDF e os 10 temos com maior DF. Lembre de implem
 #### Instruções
 
 Utilizando as funções immplementadas nas questões anteriores, aplique uma classificação com o algoritmo apropriado, comparando
-o desempenho com as duas formas de extração de atributos implementadas.
+o desempenho com as duas formas de extração de atributos implementadas. 
 
 ### Observações para o Relatório
 

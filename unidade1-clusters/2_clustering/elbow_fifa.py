@@ -5,9 +5,9 @@ import seaborn as sns
 from scipy.cluster.vq import kmeans
 
 
-from src.utils import load_comic_con_dataset
+from src.utils import load_fifa_dataset
 
-comic_con = load_comic_con_dataset()
+fifa = load_fifa_dataset()
 
 
 distortions = []
@@ -15,7 +15,7 @@ num_clusters = range(1, 7)
 
 # Create a list of distortions from the kmeans function
 for i in num_clusters:
-    cluster_centers, distortion = kmeans(comic_con[['x_scaled','y_scaled']],i)
+    cluster_centers, distortion = kmeans(fifa[['sliding_tackle','aggression']],i)
 # append distortion on list distortions
     distortions.append(distortion)
 
