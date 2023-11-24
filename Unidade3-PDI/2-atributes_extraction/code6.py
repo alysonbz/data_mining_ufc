@@ -13,7 +13,7 @@ def on_mouse_click(event, x, y, flags, param):
             semente = (y, x)
             crescimento_regiao(semente)
 def crescimento_regiao(semente):
-    global img, tolerancia
+    global imagem, tolerancia
     cinza = cv2.cvtColor(imagem, cv2.COLOR_BGR2GRAY)
     rotulos = segmentation.flood(cinza, semente, tolerance=tolerancia)
     mascara = (rotulos == rotulos[semente])
