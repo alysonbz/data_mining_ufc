@@ -116,5 +116,3 @@ def load_light_dataset(dataset = "D:\\mega\\Drive\\Mobit\\trafic_light_testes\\d
     data_teste = np.array(data_test)
 
     return data_train, np.array(label_train), data_val, np.array(label_val), data_teste, np.array(label_test)
-
-
