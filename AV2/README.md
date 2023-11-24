@@ -9,12 +9,17 @@ https://docs.google.com/document/d/1hIwPx9W-k3LnXRJrkWYTsbrtx4NfP88_/edit?usp=sh
 
 ##  Aluno - Dataset
 
-BRUNA BARRETO MESQUITA :
-LAURA DE LIMA MENDES :
-PEDRO COELHO SAMPAIO FILHO: 
-JOAO DAVI OLIVEIRA BARBOSA:
-MATEUS SILVA MATOS:
-THAYS FERREIRA UCHOA ALBUQUERQUE: 
+BRUNA BARRETO MESQUITA : Projeto  classificação Covid-19 - 2
+
+LAURA DE LIMA MENDES : Classificação de Plantas - 4
+
+PEDRO COELHO SAMPAIO FILHO: Classificação de tempo - 3 
+
+JOAO DAVI OLIVEIRA BARBOSA: Classifação de Nódulos - 1 
+
+MATEUS SILVA MATOS:  Classificação de imagens de satélite - 6
+
+THAYS FERREIRA UCHOA ALBUQUERQUE:  Detecção de incêndio - 5 
 
 ### Projeto
 
