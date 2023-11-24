@@ -35,13 +35,13 @@ TECLA_T = ord('t')
 cv2.namedWindow(JANELA_ORIGINAL)
 cv2.imshow(JANELA_ORIGINAL, imagem)
 cv2.setMouseCallback(JANELA_ORIGINAL, on_mouse_click)
-
+TECLA_ESC = 27
 while True:
     key = cv2.waitKey(1) & 0xFF
 
     if key == TECLA_T:
         ajustar_tolerancia()
-    elif key == 15:
+    elif key == TECLA_ESC:
         break
 
 cv2.destroyAllWindows()
