@@ -1,6 +1,6 @@
 # Import threshold and gray convertor functions
-from skimage.____ import ____
-from skimage.color import ____
+from skimage.filters import threshold_otsu
+from skimage.color from ___
 from src.pdi_utils import show_image, load_lools_image
 gray_tools_image = rgb2gray(tools_image)
 

@@ -1,14 +1,14 @@
 from skimage.color import rgb2gray
 from src.pdi_utils import load_page_image,show_image,manual_rgb2gray
 # Import the otsu threshold function
-from skimage.____ import ____
+from skimage.filters import threshold_otsu, threshold_local
 
 page_image = manual_rgb2gray(load_page_image())
 # Show original image
 show_image(page_image, 'Global thresholding')
 
 # Obtain the optimal otsu global thresh value
-global_thresh = ____(page_image)
+global_thresh = threshold_otsu(page_image)
 
 # Obtain the binary image by applying global thresholding
 binary_global = page_image ____ ____
