@@ -1,4 +1,5 @@
 import cv2
+
 def extract_color_histogram(image_path):
     image = cv2.imread(image_path)
     if image is not None:

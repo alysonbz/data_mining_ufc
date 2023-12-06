@@ -23,7 +23,7 @@ if __name__ == "__main__":
     model = SVC(kernel='linear', C=1)
     model.fit(X_train, y_train)
 
-    # Usar OneVsRestClassifier com o modelo treinado
+
     classifier = OneVsRestClassifier(model)
     classifier.fit(X_train, y_train)
 
@@ -35,7 +35,7 @@ if __name__ == "__main__":
     accuracy_test = accuracy_score(y_test, y_test_pred)
     print(f"Acurácia no conjunto de teste: {accuracy_test}")
 
-    # Curva ROC
+
     y_val_bin = label_binarize(y_val, classes=np.unique(y_val))
     n_classes = y_val_bin.shape[1]
     y_val_prob = classifier.decision_function(X_val)
@@ -47,7 +47,7 @@ if __name__ == "__main__":
         fpr[i], tpr[i], _ = roc_curve(y_val_bin[:, i], y_val_prob[:, i])
         roc_auc[i] = auc(fpr[i], tpr[i])
 
-    # Plota a curva ROC para cada classe
+
     plt.figure(figsize=(10, 8))
     colors = cycle(['blue', 'red', 'green', 'purple'])  # Adapte as cores conforme suas classes
     for i, color in zip(range(n_classes), colors):
@@ -62,10 +62,10 @@ if __name__ == "__main__":
     plt.legend(loc='lower right')
     plt.show()
 
-    # Matriz de confusão
+
     conf_matrix = confusion_matrix(y_val, y_val_pred)
 
-    # Visualizar a matriz de confusão com valores
+
     plt.figure(figsize=(8, 6))
     sns.heatmap(conf_matrix, annot=True, fmt='d', cmap='Blues', xticklabels=np.unique(y_val), yticklabels=np.unique(y_val))
     plt.title('Matriz de Confusão - Conjunto de Validação')
@@ -73,7 +73,7 @@ if __name__ == "__main__":
     plt.ylabel('Verdadeiro')
     plt.show()
 
-    # Relatório de classificação
+
     print("Relatório de Classificação:")
     print(classification_report(y_val, y_val_pred))
 
