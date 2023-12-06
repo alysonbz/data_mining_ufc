@@ -6,7 +6,7 @@ building_image = load_building_image()
 
 
 # Apply filter sigma = 1
-gaussian_image = gaussian(building_image, sigma=1,multichannel = True)
+gaussian_image = gaussian(building_image, sigma=1, multichannel = True)
 
 # Show original and resulting image to compare
 show_image(building_image, "Original")
