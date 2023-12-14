@@ -8,6 +8,7 @@ from sklearn.metrics import accuracy_score
 from sklearn.preprocessing import StandardScaler
 from sklearn.feature_selection import SelectKBest, f_classif
 
+
 def load_images(main_folder, class_names):
     images = []
     labels = []
@@ -61,14 +62,14 @@ def main():
 
     images, labels = load_images(main_folder, class_names)
 
-    # Feature extraction
+    # Extração de características
     features = extract_features(images)
 
-    # Feature normalization
+    # Normalização de características
     scaler = StandardScaler()
     features_scaled = scaler.fit_transform(features)
 
-    # Feature selection (opcional - experimente ajustar k)
+    # Seleção de características
     k_best = SelectKBest(f_classif, k='all')
     features_selected = k_best.fit_transform(features_scaled, labels)
 
@@ -83,10 +84,10 @@ def main():
     cv_scores = cross_val_score(svm_model, features_selected, labels, cv=5)
     print(f"Acurácia média na validação cruzada: {np.mean(cv_scores)}")
 
-    # Prediction
+    # Predição
     y_pred = svm_model.predict(X_test)
 
-    # Model evaluation
+    # Avaliação do Modelo
     accuracy = accuracy_score(y_test, y_pred)
     print(f"Acurácia do modelo: {accuracy}")
 
