@@ -41,7 +41,7 @@ def model_training(classifiers, X, y, test_size=0.2, random_state=42):
     return results, trained_models
 
 # Carregar o DataFrame df_combined_total (substitua 'seu_caminho/df_combined_total.csv' pelo caminho correto)
-caminho_arquivo_csv = r'C:\Users\joaod\OneDrive\Documentos\Semestre_2023.2\data_minning_ufc\AV2\projeto 1\df_final\df_combined_total.csv'
+caminho_arquivo_csv = r'C:\Users\joaod\Documents\Semestres\2023_02\data_mining\data_mining_ufc\AV2\projeto 1\df_final\df_combined_total.csv'
 df_combined_total = pd.read_csv(caminho_arquivo_csv)
 
 # Embaralhar as linhas do DataFrame

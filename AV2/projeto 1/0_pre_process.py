@@ -112,11 +112,11 @@ def preprocessamento_tomografia(diretorio_entrada, diretorio_saida, min_intensit
 
 
 # Exemplo de uso da função
-diretorio_entrada_benignos = r'C:\\Users\\joaod\\OneDrive\\Documentos\\Semestre_2023.2\\data_minning_ufc\\AV2\\projeto 1\\all_nods_benignos'
-diretorio_entrada_malignos = r'C:\\Users\\joaod\\OneDrive\\Documentos\\Semestre_2023.2\\data_minning_ufc\\AV2\\projeto 1\\all_nods_malignos'
+diretorio_entrada_benignos = r'C:\Users\joaod\Documents\Semestres\2023_02\data_mining\data_mining_ufc\AV2\projeto 1\all_nods_benignos'
+diretorio_entrada_malignos = r'C:\Users\joaod\Documents\Semestres\2023_02\data_mining\data_mining_ufc\AV2\projeto 1\all_nods_malignos'
 
-diretorio_saida_benignos = r'C:\\Users\\joaod\\OneDrive\\Documentos\\Semestre_2023.2\\data_minning_ufc\\AV2\\projeto 1\\data_silver\\all_nods_benignos'
-diretorio_saida_malignos = r'C:\\Users\\joaod\\OneDrive\\Documentos\\Semestre_2023.2\\data_minning_ufc\\AV2\\projeto 1\\data_silver\\all_nods_malignos'
+diretorio_saida_benignos = r'C:\Users\joaod\Documents\Semestres\2023_02\data_mining\data_mining_ufc\AV2\projeto 1\data_silver\all_nods_benignos'
+diretorio_saida_malignos = r'C:\Users\joaod\Documents\Semestres\2023_02\data_mining\data_mining_ufc\AV2\projeto 1\data_silver\all_nods_malignos'
 
 preprocessamento_tomografia(diretorio_entrada_benignos, diretorio_saida_benignos)
 preprocessamento_tomografia(diretorio_entrada_malignos, diretorio_saida_malignos)

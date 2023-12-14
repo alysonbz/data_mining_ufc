@@ -1,55 +1,76 @@
-from src.pdi_utils import load_soaps_image
-import cv2
 import numpy as np
-from skimage import segmentation
+import cv2
+import matplotlib.pyplot as plt
+from collections import deque
+from data_mining_ufc.src.pdi_utils import load_soaps_image, load_chess_image
 
-# Função de crescimento de região
-def region_growing(img, seed):
-    # Convertendo a imagem para escala de cinza
-    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-    # Inicializando a imagem de segmentação
-    segmented_image = np.zeros_like(img)
+# Função de callback para clique do usuário
+def on_click(event):
+    if event.xdata and event.ydata:
+        seed.extend([round(event.ydata), round(event.xdata)])
+        plt.close()
 
-    # Aplicando o algoritmo de crescimento de regiões
-    labels = segmentation.flood(gray, seed, tolerance=10)
 
-    # Criando uma máscara com o objeto segmentado
-    mask = (labels == labels[seed])
+# Função para crescimento de região
+def region_growing(image, seed, threshold_factor=0.2):
+    xsup, ysup = image.shape
+    queue = deque([tuple(seed)])
+    visited = set(queue)
 
-    # Convertendo a máscara para o formato uint8
-    mask = mask.astype(np.uint8) * 255
+    # Valor do pixel na semente
+    seed_value = np.int32(image[seed])
 
-    # Extraindo o objeto segmentado
-    segmented_object = cv2.bitwise_and(img, img, mask=mask)
+    # Limiar dinâmico baseado na média local
+    threshold = threshold_factor * np.mean(image)
 
-    # Adicionando o objeto segmentado à imagem de segmentação
-    segmented_image[mask != 0] = segmented_object[mask != 0]
+    while queue:
+        pixel = queue.popleft()
+        x, y = pixel
 
-    # Exibindo a imagem resultante
-    cv2.imshow("Segmented Image", segmented_image)
+        # Coordenadas dos vizinhos
+        neighbors = [(x, y + 1), (x - 1, y), (x + 1, y), (x, y - 1)]
+        valid_neighbors = [(nx, ny) for nx, ny in neighbors if
+                           0 <= nx < xsup and 0 <= ny < ysup and (nx, ny) not in visited]
 
-# Função de callback para o evento de clique do mouse
-def on_mouse_click(event, x, y, flags, param):
-    if event == cv2.EVENT_LBUTTONDOWN:
-        seed = (y, x)  # Coordenadas invertidas para corresponder ao formato (linha, coluna) da matriz
-        region_growing(img, seed)
+        for coord in valid_neighbors:
+            # Verificar a diferença de intensidade em relação à semente
+            if abs(seed_value - np.int32(image[coord])) <= threshold:
+                queue.append(coord)
+                visited.add(coord)
 
-# Carregando a imagem
-img = load_soaps_image()
+    return visited
 
-# Criando uma janela para exibir a imagem
-cv2.namedWindow("Original Image")
-cv2.imshow("Original Image", img)
 
-# Definindo a função de callback do mouse
-cv2.setMouseCallback("Original Image", on_mouse_click)
+# Carregar imagem de sabonetes
+image = load_soaps_image()
+gray_image = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
 
-# Aguardando até que a tecla 'ESC' seja pressionada
-while True:
-    key = cv2.waitKey(1) & 0xFF
-    if key == 27:
-        break
+# Exibir imagem com interação
+seed = []
+fig, ax = plt.subplots()
+ax.imshow(gray_image, cmap='gray')
+fig.canvas.mpl_connect('button_press_event', on_click)
+plt.show()
 
-# Fechando todas as janelas
-cv2.destroyAllWindows()
+# Converter semente para tupla
+seed = tuple(seed)
+
+# Aplicar crescimento de região com ajustes para realçar formatos dos sabonetes
+region = region_growing(gray_image, seed, threshold_factor=0.2)
+
+# Criar imagem resultante destacando a região de interesse
+result_image = np.zeros_like(gray_image)
+for coord in region:
+    result_image[coord] = gray_image[coord]
+
+# Exibir imagens (Original e Resultado)
+plt.subplot(1, 2, 1)
+plt.imshow(gray_image, cmap='gray')
+plt.title('Original')
+
+plt.subplot(1, 2, 2)
+plt.imshow(result_image, cmap='gray')
+plt.title('Resultado - Realce de Formatos dos Sabonetes')
+
+plt.show()

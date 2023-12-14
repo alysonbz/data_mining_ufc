@@ -24,8 +24,8 @@ def create_dataset_single_label(diretory, label, image_size=128):
     return images, labels
 
 
-diretorio_saida_benignos = r'C:\\Users\\joaod\\OneDrive\\Documentos\\Semestre_2023.2\\data_minning_ufc\\AV2\\projeto 1\\data_silver\\all_nods_benignos'
-diretorio_saida_malignos = r'C:\\Users\\joaod\\OneDrive\\Documentos\\Semestre_2023.2\\data_minning_ufc\\AV2\\projeto 1\\data_silver\\all_nods_malignos'
+diretorio_saida_benignos = r'C:\Users\joaod\Documents\Semestres\2023_02\data_mining\data_mining_ufc\AV2\projeto 1\data_silver\all_nods_benignos'
+diretorio_saida_malignos = r'C:\Users\joaod\Documents\Semestres\2023_02\data_mining\data_mining_ufc\AV2\projeto 1\data_silver\all_nods_malignos'
 
 # Criar dataset para imagens benignas com label 0
 images_benignos, labels_benignos = create_dataset_single_label(diretorio_saida_benignos, label=0, image_size=128)
@@ -155,7 +155,7 @@ print(df_combined_total['label'].value_counts())
 print(df_combined_total.columns)
 
 # Especificar o caminho e nome do arquivo CSV
-caminho_arquivo_csv = r'C:\Users\joaod\OneDrive\Documentos\Semestre_2023.2\data_minning_ufc\AV2\projeto 1\df_final\df_combined_total.csv'
+caminho_arquivo_csv = r'C:\Users\joaod\Documents\Semestres\2023_02\data_mining\data_mining_ufc\AV2\projeto 1\df_final'
 
 # Salvar o DataFrame em um arquivo CSV
 df_combined_total.to_csv(caminho_arquivo_csv, index=False)
