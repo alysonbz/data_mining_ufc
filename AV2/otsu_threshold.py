@@ -1,5 +1,3 @@
-# full_script.py
-
 import os
 import csv
 import numpy as np
@@ -54,7 +52,7 @@ def otsu_threshold_segmentation_color(img, channel=0):
     img = exposure.equalize_adapthist(img)
 
     if len(img.shape) == 3:
-        # Aplica o filtro Sobel ao canal de cor verde
+        # filtro Sobel ao canal de cor verde
         edges = filters.sobel(img[:, :, channel])
 
         # limiarização de Otsu nas bordas
@@ -131,22 +129,19 @@ def save_features_to_csv(features, labels, output_csv):
     df.to_csv(output_csv, index=False)
 
 def display_sample_images(images, labels, class_names):
-    # Cria um dicionário para armazenar uma imagem representativa de cada classe
+    # Dicionário para armazenar uma imagem de cada classe
     sample_images = {class_name: None for class_name in class_names}
-
-    # Encontra a primeira imagem de cada classe
     for img, label in zip(images, labels):
         if sample_images[label] is None:
-            # Realiza o pré-processamento na imagem
+            # pré-processamento na imagem
             segmented_img = otsu_threshold_segmentation_color(img, channel=1)
             segmented_img = exposure.adjust_gamma(segmented_img, gamma=0.5)
             sample_images[label] = segmented_img
 
-            # Se todas as imagens foram encontradas, interrompe a busca
             if all(value is not None for value in sample_images.values()):
                 break
 
-    # Exibe as imagens representativas após a limiarização e remoção de ruídos
+    # Imagem após a limiarização e remoção de ruídos
     for class_name, img in sample_images.items():
         plt.figure()
         plt.imshow(img, cmap='gray')  # Utiliza colormap 'gray' para imagens em tons de cinza
@@ -160,7 +155,7 @@ def main():
 
     images, labels = load_images(main_folder, class_names)
 
-    # Lista das imagens para corte
+    # Lista das imagens para corte dos dedos
     files_to_process = ['13291788381638.jpg', '13291788389752.jpg']
 
     # Extraindo atributos geométricos
@@ -187,7 +182,7 @@ def main():
     advanced_csv_filename = 'features_advanced.csv'
     save_features_to_csv(advanced_features, labels, advanced_csv_filename)
 
-    # Dividir dados para treinamento e teste
+    # Dividindo os dados em treinamento e teste
     X_train, X_test, y_train, y_test = train_test_split(advanced_features, labels, test_size=0.2, random_state=42)
 
     # Treino do modelo SVM
@@ -200,8 +195,6 @@ def main():
     # precisão do modelo
     accuracy = accuracy_score(y_test, y_pred)
     print(f"Acurácia do modelo: {accuracy}")
-
-    # Exibir uma imagem de cada planta
     display_sample_images(images, labels, class_names)
 
 if __name__ == "__main__":
