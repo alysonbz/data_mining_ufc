@@ -11,8 +11,8 @@ from scipy.cluster.hierarchy import linkage, fcluster
 Z = linkage(df, 'ward')
 
 # Generate cluster labels
-df['cluster_labels'] = fcluster(Z, df, criterion='maxclust')
+df['cluster_labels'] = fcluster(Z, 2, criterion='maxclust')
 
 # Plot the points with seaborn
-sns.scatterplot(x=____, y=____, hue=____, data=df)
+sns.scatterplot(x='x', y='y', hue='cluster_labels', data=df)
 plt.show()

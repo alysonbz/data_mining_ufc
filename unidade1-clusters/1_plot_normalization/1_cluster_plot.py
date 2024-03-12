@@ -9,4 +9,4 @@ from matplotlib import pyplot as plt
 plt.scatter(x, y)
 
 # Display the scatter plot
-plt.scatter()
+plt.show()
