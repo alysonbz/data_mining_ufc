@@ -8,7 +8,7 @@ from scipy.cluster.vq import kmeans, vq
 df= loadpokemon_dataset_df()
 
 # Compute cluster centers
-centroids,data = kmeans(df,3)
+centroids,data = kmeans(df,2)
 
 # Assign cluster labels
 df['cluster_labels'], _ = vq(df,centroids)
