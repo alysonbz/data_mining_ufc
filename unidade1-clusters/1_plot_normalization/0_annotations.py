@@ -21,3 +21,11 @@ Centrouid Method = medida de similaridade definida pelo ponto médio do primeiro
 wards method ou método da mínima variancia = Medida de dictancia etre dois clusters. É a soma das
 distancias ao quadrado entre os dois clusters.
 """
+
+"""
+A função fcusters adiciona rotulo aos dados. Se for passado o parâmetro maxclus, siginifica
+que sera realizado uma análise de algoritimo e se existir mais clusters que o parâmetro máximo
+informado, o algoritimo combinara os clusters menos semelhiantes até que fique com a quantidade
+de clusters passados no parâmetro.
+"""
+
