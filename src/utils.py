@@ -4,7 +4,6 @@ from nltk.tokenize import word_tokenize
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfVectorizer
-from gensim.corpora.dictionary import Dictionary
 from nltk.stem import WordNetLemmatizer
 
 
