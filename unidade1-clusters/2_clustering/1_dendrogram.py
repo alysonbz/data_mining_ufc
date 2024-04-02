@@ -6,11 +6,11 @@ from scipy.cluster.hierarchy import dendrogram
 from scipy.cluster.hierarchy import linkage
 
 df = load_comic_con_dataset()
-
-distance_matrix = ___
+print(df.columns)
+distance_matrix = linkage(df[['x_coordinate', 'y_coordinate']], method='ward', metric='euclidean')
 
 # Create a dendrogram
-dn = __
+dn = dendrogram(distance_matrix)
 
 # Display the dendogram
-__
+plt.show()
