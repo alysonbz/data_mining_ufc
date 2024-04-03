@@ -3,11 +3,11 @@ from src.utils import load_pokemon_dataset
 
 df = load_pokemon_dataset()
 
-
 def set_random_cluster_coordinate(num_of_cluster):
     coord_list = []
     label_list = range(0,num_of_cluster)
     #preecher a lista com quatro coordenadas aleatótias.
+    
     return coord_list , label_list
 
 def create_points(df):

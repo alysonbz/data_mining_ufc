@@ -1,11 +1,12 @@
 
 from src.utils import load_wine_dataset
-from ___ import ___
+from scipy.cluster.vq import whiten
+
 wine = load_wine_dataset()
 X = wine.drop(['Quality'],axis=1)
 
 # Create the scaler
-scaler = ____
+scaler =
 
 X_norm = _____
 
