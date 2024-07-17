@@ -1,8 +1,8 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
 from src.utils import loadpokemon_dataset_df
-df= loadpokemon_dataset_df()
 
+df= loadpokemon_dataset_df()
 
 # Import linkage and fcluster functions
 from scipy.cluster.hierarchy import linkage, fcluster
