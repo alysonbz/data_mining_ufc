@@ -18,4 +18,4 @@ print(____)
 
 # Find the script notation at the beginning of the fourth sentence and print it
 pattern2 = r"___"
-print(____)
+print()

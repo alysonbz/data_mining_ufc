@@ -4,7 +4,7 @@ from src.utils import get_sample_Santo_Graal
 
 # Split scene_one into sentences: sentences
 scene_one = get_sample_Santo_Graal()
-sentences = _____
+sentences =
 
 # Use word_tokenize to tokenize the fourth sentence: tokenized_sent
 tokenized_sent = _____
