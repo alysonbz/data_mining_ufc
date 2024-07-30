@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 from scipy.cluster.vq import kmeans,vq
 from src.utils import load_fifa_dataset
 
-
 fifa = load_fifa_dataset()
 # Fit the data into a k-means algorithm
 cluster_centers,_ = kmeans(fifa[['sliding_tackle', 'aggression']], 3)
