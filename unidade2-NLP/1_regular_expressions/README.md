@@ -145,3 +145,4 @@ Usar compreensões de lista aqui acelerará seus cálculos. Por exemplo: ``my_li
 
 10. **Contagem de Vogais:**
     Crie uma função que conte o número de vogais em uma string usando expressões regulares.
+ 
