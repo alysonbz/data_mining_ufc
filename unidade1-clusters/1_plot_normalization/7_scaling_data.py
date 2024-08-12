@@ -9,6 +9,6 @@ scaler = StandardScaler()
 
 X_norm = scaler.fit_transform(X)
 
-print('variancia',X.var)
+print('variancia',X.var())
 
-print('variancia do dataset normalizado',X_norm.var)
+print('variancia do dataset normalizado',X_norm.var())
