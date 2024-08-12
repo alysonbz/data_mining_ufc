@@ -12,7 +12,7 @@ text = "A linguagem de programação em Python é a mais utilizada do mundo," \
        " fazendo de Python também a principal ferramenta para pesquisa de ML. " \
        "Ou seja, python é presente e futuro."
 
-print(cont_word(text))
+print("resultado primeira questão: ",cont_word(text))
 
 
 # Validação de email
