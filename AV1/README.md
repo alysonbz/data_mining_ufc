@@ -28,7 +28,7 @@ MAVERICK ALEKYNE DE SOUSA RIBEIRO: questao 1 -  https://www.kaggle.com/datasets/
 outras questões - https://www.kaggle.com/datasets/lucaspoo/steam-reviews-international
 
  EMILY CAMELO MENDONCA: questao 1 - https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset
-outras questões - https://www.kaggle.com/datasets/gallo33henrique/twitter-nlp-pifzer
+outras questões - https://www.kaggle.com/datasets/yasserh/twitter-tweets-sentiment-dataset
 
  LUIS SAVIO GOMES ROSA: questão 1 - https://www.kaggle.com/datasets/prathamtripathi/drug-classification
 outras questões - https://www.kaggle.com/datasets/gorororororo23/european-restaurant-reviews
