@@ -1,18 +1,26 @@
 import matplotlib.pyplot as plt
+import pandas as pd
 import seaborn as sns
-from src.utils import loadpokemon_dataset_df
-df= loadpokemon_dataset_df()
+#Import kmeans from scipy
+from scipy.cluster.vq import kmeans
 
+from src.utils import load_comic_con_dataset
 
-# Import linkage and fcluster functions
-from scipy.cluster.hierarchy import ____, ____
+comic_con = load_comic_con_dataset()
 
-# Use the linkage() function to compute distance
-Z = ____(____, 'ward')
+distortions = []
+num_clusters = range(1, 7)
 
-# Generate cluster labels
-df['cluster_labels'] = ____(____, ____, criterion='maxclust')
+# Create a list of distortions from the kmeans function
+for i in num_clusters:
+    cluster_centers, distortion = kmeans(comic_con[['x_scaled', 'y_scaled']], i)
+# append distortion on list distortions
+    distortions.append(distortion)
 
-# Plot the points with seaborn
-sns.scatterplot(x=____, y=____, hue=____, data=df)
+# Create a DataFrame with two lists - num_clusters, distortions
+elbow_plot = pd.DataFrame({'num_clusters': num_clusters, 'distortions': distortions})
+
+# Creat a line plot of num_clusters and distortions
+sns.lineplot(x='num_clusters', y='distortions', data =elbow_plot)
+plt.xticks(num_clusters)
 plt.show()

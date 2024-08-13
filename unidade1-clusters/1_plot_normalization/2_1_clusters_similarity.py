@@ -26,6 +26,3 @@ print("similaridade ligação completa: ", compute_complete_linkage(cluster1,clu
 print("similaridade ligação média: ", compute_average_linkage(cluster1,cluster2))
 print("similaridade pelo método do centroide: ", compute_centroid_linkage(cluster1,cluster2))
 print("similaridade ligação simples: ", compute_ward_linkage(cluster1,cluster2))
-
-
-
