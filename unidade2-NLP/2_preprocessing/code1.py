@@ -1,6 +1,5 @@
 # Import Counter and word_tokenize
-__
-__
+from nltk.tokenize import word_tokenize
 
 from NLP.src.nlp_utils import get_sample_article
 
