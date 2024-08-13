@@ -12,7 +12,7 @@ text = "A liguagem de programação em Python é a mais utilizada do mundo," \
        " fazendo de Python também a principal ferramenta para pesquisa de ML. " \
        "Ou seja, python é presente e futuro."
 
-print(cont_word(text))
+print("resultado primeira questão: ",cont_word(text))
 
 #2. *Validação de E-mail:*
 # Crie uma função que valide se um dado texto representa um endereço de e-mail válido usando expressões regulares.
