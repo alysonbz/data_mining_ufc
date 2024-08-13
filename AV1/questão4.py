@@ -1,0 +1,2 @@
+'''Utilizando as funções immplementadas nas questões anteriores, aplique uma classificação com o algoritmo apropriado, comparando
+o desempenho com as duas formas de extração de atributos implementadas.'''
