@@ -18,7 +18,7 @@ def set_random_cluster_coordinate(num_of_cluster, df):
 
 
 def create_points(df):
-    coords = df.iloc[:, [0, 1]].values.tolist()  # Assumindo que as primeiras duas colunas são as coordenadas
+    coords = df.iloc[:, [0, 1]].values.tolist()
     return coords
 
 

@@ -96,6 +96,6 @@ e resultados alcançados.
 
 #### Qualidade das atividades de casa: 2
 #### Qualidade das atividades de sala: 1
-#### Qualidade dos códigos: 2
+#### Qualidade dos códigos: 2 
 #### Qualidade do relatório: 3
 #### Qualidade da apresentação: 2
