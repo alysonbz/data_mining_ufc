@@ -1,18 +1,19 @@
-# Import Counter and word_tokenize
+# Importar Counter e word_tokenize
+from collections import Counter
 from nltk.tokenize import word_tokenize
-
 from src.utils import get_sample_article
 
+# Obter amostra do artigo
 article = get_sample_article()
 
-# Tokenize the article: tokens
-tokens = ___(__)
+# Tokenizar o artigo: tokens
+tokens = word_tokenize(article)
 
-# Convert the tokens into lowercase: lower_tokens
-lower_tokens = [__ for t in ___]
+# Converter os tokens para minúsculas: lower_tokens
+lower_tokens = [t.lower() for t in tokens]
 
-# Create a Counter with the lowercase tokens: bow_simple
-bow_simple = __(__)
+# Criar um Counter com os tokens em minúsculas: bow_simple
+bow_simple = Counter(lower_tokens)
 
-# Print the 10 most common tokens
-print(___)
+# Imprimir os 10 tokens mais comuns
+print(bow_simple.most_common(10))

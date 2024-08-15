@@ -2,27 +2,28 @@ from gensim.corpora.dictionary import Dictionary
 from src.utils import get_pre_process_wiki_articles
 from gensim.models import TfidfModel
 
-# Create a Dictionary from the articles: dictionary
+# Criar um Dicionário a partir dos artigos: dictionary
 articles = get_pre_process_wiki_articles()
 dictionary = Dictionary(articles)
 
-# Create a MmCorpus: corpus
+# Criar um MmCorpus: corpus
 corpus = [dictionary.doc2bow(article) for article in articles]
 
-# Get the fifth document in corpus: doc
+# Obter o quinto documento no corpus: doc
 doc = corpus[4]
 
-# Create a new TfidfModel using the corpus: tfidf
-tfidf = __(__)
-# Calculate the tfidf weights of doc: tfidf_weights
-tfidf_weights = __[__]
+# Criar um novo TfidfModel usando o corpus: tfidf
+tfidf = TfidfModel(corpus)
 
-# Print the first five weights
-print(___)
+# Calcular os pesos tfidf do doc: tfidf_weights
+tfidf_weights = tfidf[doc]
 
-# Sort the weights from highest to lowest: sorted_tfidf_weights
-sorted_tfidf_weights = ___
+# Imprimir os primeiros cinco pesos
+print(tfidf_weights[:5])
 
-# Print the top 5 weighted words
+# Ordenar os pesos do maior para o menor: sorted_tfidf_weights
+sorted_tfidf_weights = sorted(tfidf_weights, key=lambda w: w[1], reverse=True)
+
+# Imprimir as 5 palavras com maior peso
 for term_id, weight in sorted_tfidf_weights[:5]:
-    print(__,__)
+    print(dictionary.get(term_id), weight)

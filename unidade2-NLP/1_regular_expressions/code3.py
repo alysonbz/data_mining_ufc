@@ -1,22 +1,26 @@
+import re
 from nltk.tokenize import sent_tokenize
 from src.utils import get_sample_Santo_Graal
 
-scene_one =  get_sample_Santo_Graal()
-sentences =  sent_tokenize(scene_one)
+# Carregar o texto de amostra
+scene_one = get_sample_Santo_Graal()
+sentences = sent_tokenize(scene_one)
 
-# Search for the first occurrence of "coconuts" in scene_one: match
-match = ___
+# Procurar a primeira ocorrência de "coconuts" em scene_one: match
+match = re.search(r"coconuts", scene_one)
 
-# Print the start and end indexes of match
-print(__, __)
-print (match)
+# Imprimir os índices de início e fim do match
+print(match.start(), match.end())
+print(match)
 
-# Write a regular expression to search for anything in square brackets: pattern1
-pattern1 = r"___"
+# Escrever uma expressão regular para buscar qualquer coisa entre colchetes: pattern1
+pattern1 = r"\[.*?\]"
 
-# Use re.search to find the first text in square brackets
-print(____)
+# Usar re.search para encontrar o primeiro texto entre colchetes
+brackets_text = re.search(pattern1, scene_one)
+print(brackets_text.group())
 
-# Find the script notation at the beginning of the fourth sentence and print it
-pattern2 = r"___"
-print(____)
+# Encontrar a notação de script no início da quarta sentença e imprimi-la
+pattern2 = r"^\[.*?\]"
+script_notation = re.search(pattern2, sentences[3])
+print(script_notation.group())
