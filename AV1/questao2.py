@@ -98,3 +98,24 @@ most_common_overall = Counter(all_tokens).most_common(10)
 reviews_over_50_tokens = df_reviews[df_reviews['tokens'].apply(len) > 50].shape[0]
 
 print(average_tokens, most_common_overall, reviews_over_50_tokens)
+
+
+# Exibir as cinco primeiras listas de tokens
+print("Cinco primeiras listas de tokens:")
+for i, tokens in enumerate(df_reviews['tokens'][:5]):
+    print(f"Revisão {i+1}: {tokens}\n")
+
+# Análise 1: Número médio de tokens por revisão
+average_tokens = df_reviews['tokens'].apply(len).mean()
+print(f"Número médio de tokens por revisão: {average_tokens:.2f}\n")
+
+# Análise 2: Frequência das palavras mais comuns em todas as revisões
+all_tokens = [token for tokens in df_reviews['tokens'] for token in tokens]
+most_common_overall = Counter(all_tokens).most_common(10)
+print("Palavras mais comuns em todas as revisões:")
+for word, count in most_common_overall:
+    print(f"{word}: {count}")
+
+# Análise 3: Revisões com mais de 50 tokens
+reviews_over_50_tokens = df_reviews[df_reviews['tokens'].apply(len) > 50].shape[0]
+print(f"\nNúmero de revisões com mais de 50 tokens: {reviews_over_50_tokens}")
