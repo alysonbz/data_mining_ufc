@@ -29,6 +29,7 @@ class KMeans:
                 break
             self.centroids = new_centroids
 
+
     def predict(self, X):
         if isinstance(X, pd.DataFrame):
             X = X.to_numpy()

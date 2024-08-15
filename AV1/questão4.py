@@ -8,6 +8,7 @@ from imblearn.over_sampling import SMOTE
 import nltk
 from nltk.corpus import stopwords
 
+
 # Baixar as stopwords do NLTK, caso ainda não tenha baixado
 nltk.download('stopwords')
 

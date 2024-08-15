@@ -6,6 +6,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 import matplotlib.pyplot as plt
 
 
+
 # Baixar as stopwords do NLTK, caso ainda não tenha baixado
 nltk.download('stopwords')
 

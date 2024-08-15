@@ -8,6 +8,7 @@ def simple_preprocess_and_tokenize(text):
     # Remover caracteres especiais e números
     text = re.sub(r'[^A-Za-z\s]', '', text)
 
+
     # Converter o texto para minúsculas
     text = text.lower()
 
