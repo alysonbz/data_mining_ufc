@@ -24,7 +24,7 @@ def check(email):
     else:
         print("Email Inválido!")
 
-email = "sheldasouza21@gmail.com"
+email = "emilymendc@gmail.com"
 print(check(email))
 
 #3. *Extração de Números de Telefone:*
@@ -56,7 +56,7 @@ def substituir_gato_por_cachorro(texto):
 
     return texto_modificado
 
-texto3 = "Atirei o pau no gato mas o gato não morreu."
+texto3 = "Fui ao mercado comprar café."
 texto_modificado = substituir_gato_por_cachorro(texto3)
 print(texto_modificado)
 #5. *Extração de URLs:*
@@ -83,8 +83,8 @@ def validar_senha(senha):
     else:
         print("Senha inválida!")
 
-senha1 = "Souza@123"
-senha2 = "sonhOa123"
+senha1 = "SEmy@123"
+senha2 = "semyO123"
 
 print(validar_senha(senha1))
 print(validar_senha(senha2))
@@ -97,7 +97,7 @@ def extrair_palavras(texto):
 
     return palavras
 
-texto5 = "um, dois, três, somos trigêmeas sim!"
+texto5 = "parabens pra voce nessa data querida!"
 palavras = extrair_palavras(texto5)
 print(palavras)
 
@@ -110,8 +110,8 @@ def validar_data(data):
         print("data válida.")
     else:
         print("data inválida!")
-data1 = "29/02/2024"
-data2 = "15/08/2023"
+data1 = "12/07/2024"
+data2 = "18/08/2023"
 
 print(validar_data(data1))
 print(validar_data(data2))
@@ -124,7 +124,7 @@ def extrair_nomes_proprios(texto):
 
     return nomes_proprios
 texto6 = """
-Davi foi ao parque com Jonas e Bruno.
+Marcio comprou cafe para Dani e Fabio.
 """
 nomes_proprios = extrair_nomes_proprios(texto6)
 print(nomes_proprios)
@@ -136,6 +136,6 @@ def contar_vogais(texto):
     numero_de_vogais = len(vogais)
 
     return numero_de_vogais
-texto7 = "Maria é uma menina divertida."
+texto7 = "Gabriela gosta de suco de goiaba."
 numero_de_vogais = contar_vogais(texto7)
 print(f"Número de vogais: {numero_de_vogais}")
