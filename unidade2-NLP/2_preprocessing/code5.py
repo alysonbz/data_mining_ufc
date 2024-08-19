@@ -21,7 +21,7 @@ tfidf_weights = tfidf[doc]
 print(tfidf_weights[0:5])
 
 # Sort the weights from highest to lowest: sorted_tfidf_weights
-sorted_tfidf_weights = ___
+sorted_tfidf_weights = sorted(tfidf_weights, reverse=True)
 
 # Print the top 5 weighted words
 for term_id, weight in sorted_tfidf_weights[:5]:
