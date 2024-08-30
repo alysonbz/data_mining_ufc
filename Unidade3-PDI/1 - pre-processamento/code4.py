@@ -1,23 +1,21 @@
-from src.pdi_utils import show_image , load_chess_image
+from src.pdi_utils import show_image, load_chess_image
 from skimage.color import rgb2gray
+from skimage.filters import threshold_otsu
 
-# Import the otsu threshold function
-______
-
-
+# Carregar a imagem
 chess_pieces_image = load_chess_image()
 
-# Make the image grayscale using rgb2gray
-chess_pieces_image_gray = __
+# Converter a imagem para escala de cinza usando rgb2gray
+chess_pieces_image_gray = rgb2gray(chess_pieces_image)
 
-#show original image
-__(__,'Original image')
+# Mostrar a imagem original
+show_image(chess_pieces_image, 'Original Image')
 
-# Obtain the optimal threshold value with otsu
-thresh = __
+# Obter o valor ótimo de limiar com o método de Otsu
+thresh = threshold_otsu(chess_pieces_image_gray)
 
-# Apply thresholding to the image
-binary = __
+# Aplicar o limiar na imagem (binarização)
+binary = chess_pieces_image_gray > thresh
 
-# Show the binary image
-__(__, 'Binary image')
+# Mostrar a imagem binária
+show_image(binary, 'Binary Image')

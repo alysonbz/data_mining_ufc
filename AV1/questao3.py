@@ -1,19 +1,24 @@
 import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 import matplotlib.pyplot as plt
+from nltk.stem import PorterStemmer
 from questao2 import preprocess_and_tokenize
+
+# Função para aplicar stemming nos tokens
+def apply_stemming(tokens):
+    ps = PorterStemmer()
+    return [ps.stem(token) for token in tokens]
 
 def generate_features(df):
     # Gerar atributos baseados no DF (Document Frequency)
-    vectorizer_df = CountVectorizer(tokenizer=preprocess_and_tokenize, token_pattern=None)
+    vectorizer_df = CountVectorizer(tokenizer=lambda x: apply_stemming(preprocess_and_tokenize(x)), token_pattern=None)
     X_df = vectorizer_df.fit_transform(df['Text'])
 
     # Gerar atributos baseados no TF-IDF
-    vectorizer_tfidf = TfidfVectorizer(tokenizer=preprocess_and_tokenize, token_pattern=None)
+    vectorizer_tfidf = TfidfVectorizer(tokenizer=lambda x: apply_stemming(preprocess_and_tokenize(x)), token_pattern=None)
     X_tfidf = vectorizer_tfidf.fit_transform(df['Text'])
 
     return X_df, X_tfidf, vectorizer_df, vectorizer_tfidf
-
 
 def plot_top_terms(vectorizer, matrix, top_n=10, title="Top Terms"):
     # Obter os termos e suas frequências

@@ -1,29 +1,30 @@
 from skimage.color import rgb2gray
-from src.pdi_utils import load_page_image,show_image,manual_rgb2gray
-# Import the otsu threshold function
-from skimage.____ import ____
+from src.pdi_utils import load_page_image, show_image, manual_rgb2gray
+from skimage.filters import threshold_otsu, threshold_local
 
+# Carregar e converter a imagem para escala de cinza usando manual_rgb2gray
 page_image = manual_rgb2gray(load_page_image())
-# Show original image
-show_image(page_image, 'Global thresholding')
 
-# Obtain the optimal otsu global thresh value
-global_thresh = ____(page_image)
+# Mostrar a imagem original
+show_image(page_image, 'Global Thresholding')
 
-# Obtain the binary image by applying global thresholding
-binary_global = page_image ____ ____
+# Obter o valor ótimo de limiar global com Otsu
+global_thresh = threshold_otsu(page_image)
 
-# Show the binary image obtained
-show_image(binary_global, 'Global thresholding')
+# Obter a imagem binária aplicando o limiar global
+binary_global = page_image > global_thresh
 
-# Set the block size to 35
-block_size = ____
+# Mostrar a imagem binária obtida
+show_image(binary_global, 'Global Thresholding')
 
-# Obtain the optimal local thresholding
-local_thresh = ____(____, ____, offset=10)
+# Definir o tamanho do bloco para limiarização local
+block_size = 35
 
-# Obtain the binary image by applying local thresholding
-binary_local = page_image ____ ____
+# Obter o limiar local usando o tamanho do bloco e um offset
+local_thresh = threshold_local(page_image, block_size, offset=10)
 
-# Show the binary image
-show_image(binary_local, 'Local thresholding')
+# Obter a imagem binária aplicando a limiarização local
+binary_local = page_image > local_thresh
+
+# Mostrar a imagem binária local
+show_image(binary_local, 'Local Thresholding')
