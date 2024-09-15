@@ -24,6 +24,8 @@ ERICK RAMOS COUTINHO e LUCIANA SOUSA MARTINS: Classifação de Nódulos - 1
 DUPLA 5:
 ERYKA CARVALHO DA SILVA e LUIS SAVIO GOMES ROSA:  Classificação de imagens de satélite - 6
 
+Os datasets estão no canal geral do teams.
+
 ### Projeto
 
 #### Instruções:
@@ -40,4 +42,5 @@ o pipiline para resolução da prova é composto:
 Voce deve salavar os script .py organizados  dentro da pasta AV2. Não há limite relacionado a quantidade de scripts utilizados.
 No relatório você deve informar como o avaliador do projeto pode executar todo pipiline do projeto. Basta 1 único relatório 
 para a dupla. 
+
 
