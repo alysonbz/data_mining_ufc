@@ -84,3 +84,4 @@ cluster_counts = df['cluster'].value_counts()
 
 # Exibir o resultado
 print(cluster_counts)
+

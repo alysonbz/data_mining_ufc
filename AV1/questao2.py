@@ -1,44 +1,3 @@
-'''import pandas as pd
-import re
-from nltk.tokenize import word_tokenize
-import matplotlib.pyplot as plt
-
-# Função para pré-processar e tokenizar o texto
-def preprocess_and_tokenize(text):
-    # Remover caracteres especiais e pontuação
-    text = re.sub(r'[^\w\s]', '', text)
-    # Transformar para minúsculas
-    text = text.lower()
-    # Tokenizar
-    tokens = word_tokenize(text)
-    return tokens
-
-# Carregar o dataset
-df = pd.read_csv('steam_reviews.csv')
-
-df = df.dropna()
-# Selecionar colunas relevantes
-df_reviews = df[['review_text']]
-
-# Aplicar pré-processamento e tokenização
-df_reviews['tokens'] = df_reviews['review_text'].apply(preprocess_and_tokenize)
-
-# Exibir as cinco primeiras listas de tokens
-print("Cinco primeiras listas de tokens:")
-for i, tokens in enumerate(df_reviews['tokens'][:5]):
-    print(f"Revisão {i+1}: {tokens}")
-
-# Plotar as cinco primeiras listas de tokens
-plt.figure(figsize=(10, 5))
-for i, tokens in enumerate(df_reviews['tokens'][:5]):
-    plt.plot(tokens, label=f'Revisão {i+1}')
-plt.legend()
-plt.title('Cinco Primeiras Listas de Tokens')
-plt.xlabel('Tokens')
-plt.ylabel('Frequência')
-plt.show()
-'''
-
 import pandas as pd
 import re
 from nltk.tokenize import word_tokenize
@@ -49,6 +8,8 @@ import matplotlib.pyplot as plt
 def preprocess_and_tokenize(text):
     # Remover caracteres especiais e pontuação
     text = re.sub(r'[^\w\s]', '', text)
+
+
     # Transformar para minúsculas
     text = text.lower()
     # Tokenizar

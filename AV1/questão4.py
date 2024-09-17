@@ -5,7 +5,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import accuracy_score, classification_report
-from imblearn.over_sampling import SMOTE
+from imblearn.under_sampling import RandomUnderSampler
 from imblearn.pipeline import Pipeline
 import nltk
 
@@ -58,16 +58,23 @@ df_matrix_test = count_vectorizer.transform(X_test)
 tfidf_matrix_train = calculate_df_tfidf(pd.DataFrame({'review_text': X_train}), tfidf_vectorizer)
 tfidf_matrix_test = tfidf_vectorizer.transform(X_test)
 
-# Aplicar SMOTE para balancear os dados
-smote = SMOTE(random_state=42)
-X_resampled_df, y_resampled_df = smote.fit_resample(df_matrix_train, y_train)
-X_resampled_tfidf, y_resampled_tfidf = smote.fit_resample(tfidf_matrix_train, y_train)
+# Aplicar undersampling para balancear os dados
+undersampler = RandomUnderSampler(sampling_strategy=1, random_state=42)
+X_resampled_df, y_resampled_df = undersampler.fit_resample(df_matrix_train, y_train)
+X_resampled_tfidf, y_resampled_tfidf = undersampler.fit_resample(tfidf_matrix_train, y_train)
+
+from imblearn.combine import SMOTEENN
+
+# Combinação de SMOTE e undersampling (ENN)
+smote_enn = SMOTEENN(random_state=42)
+X_resampled_df, y_resampled_df = smote_enn.fit_resample(df_matrix_train, y_train)
+X_resampled_tfidf, y_resampled_tfidf = smote_enn.fit_resample(tfidf_matrix_train, y_train)
 
 # Treinar e avaliar o classificador com DF balanceado
 nb_classifier_df = MultinomialNB()
 nb_classifier_df.fit(X_resampled_df, y_resampled_df)
 y_pred_df = nb_classifier_df.predict(df_matrix_test)
-print("Desempenho com Document Frequency (Balanceado):")
+print("Desempenho com Document Frequency")
 print(f"Precisão: {accuracy_score(y_test, y_pred_df):.4f}")
 print(classification_report(y_test, y_pred_df))
 
@@ -75,6 +82,6 @@ print(classification_report(y_test, y_pred_df))
 nb_classifier_tfidf = MultinomialNB()
 nb_classifier_tfidf.fit(X_resampled_tfidf, y_resampled_tfidf)
 y_pred_tfidf = nb_classifier_tfidf.predict(tfidf_matrix_test)
-print("Desempenho com TF-IDF (Balanceado):")
+print("Desempenho com TF-IDF")
 print(f"Precisão: {accuracy_score(y_test, y_pred_tfidf):.4f}")
 print(classification_report(y_test, y_pred_tfidf))
