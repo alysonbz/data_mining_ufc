@@ -10,15 +10,9 @@ print(df_CB.head())
 
 
 def preprocess_data(df, text_column):
-    # Seleção das colunas relevantes
     df = df[['post_id', 'label', 'target', text_column]]
-
-    # Remoção de caracteres desnecessários
     df[text_column] = df[text_column].apply(lambda x: re.sub(r'[^A-Za-z\s]', '', str(x).lower()))
-
-    # Tokenização
     df['tokens'] = df[text_column].apply(word_tokenize)
-
     return df
 
 

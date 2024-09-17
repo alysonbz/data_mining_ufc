@@ -1,23 +1,21 @@
-from src.pdi_utils import load_lena
+from src.pdi_utils import load_red_roses, show_image
 import matplotlib.pyplot as plt
 
-from src.pdi_utils import load_red_roses,show_image
-import matplotlib.pyplot as plt
-
+# Carregar a imagem das rosas vermelhas
 image = load_red_roses()
 
-# Show original image
-__(__,'image RGB')
+# Mostrar a imagem original
+show_image(image, 'Image RGB') y
 
-# Obtain the red channel
-red_channel = __
+# Obter o canal vermelho
+red_channel = image[:, :, 0]
 
-# Show original image
-__(__,'image red channel')
+# Mostrar a imagem do canal vermelho
+show_image(red_channel, 'Image Red Channel')
 
-# Plot the red histogram with bins in a range of 256
-plt.__(__, bins=__)
+# Plotar o histograma do canal vermelho com 256 bins
+plt.hist(red_channel.ravel(), bins=256, color='red', alpha=0.7)
 
-# Set title and show
+# Definir o título e mostrar o histograma
 plt.title('Red Histogram')
 plt.show()

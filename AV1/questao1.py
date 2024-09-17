@@ -68,3 +68,5 @@ kmeans.fit(data)
 # Prever os clusters para cada ponto
 labels = kmeans.predict(data)
 df['cluster'] = labels
+
+print(df['cluster'].head())
