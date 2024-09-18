@@ -44,3 +44,5 @@ No relatório você deve informar como o avaliador do projeto pode executar todo
 para a dupla. 
 
 
+PRAZO PARA ENVIAR RELATÓRIO: 
+20-09
