@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3042669b-3a08-4d85-a940-661ac8c2bc05" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/AV2/scripts/classify.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AV2/scripts/extract_features.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AV2/scripts/read_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AV2/scripts/train_test_split.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AV2/analysis/plot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AV2/scripts/teste.py" beforeDir="false" afterPath="$PROJECT_DIR$/AV2/scripts/teste.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,40 +32,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.1_cluster_plot.executor&quot;: &quot;Run&quot;,
-    &quot;Python.1_countVectorizer.executor&quot;: &quot;Run&quot;,
-    &quot;Python.1_dendrogram.executor&quot;: &quot;Run&quot;,
-    &quot;Python.2_elbow_method.executor&quot;: &quot;Run&quot;,
-    &quot;Python.2_tf-idf-sklearn.executor&quot;: &quot;Run&quot;,
-    &quot;Python.3_1_manual_kmeans.executor&quot;: &quot;Run&quot;,
-    &quot;Python.3_fake_news_classifier_count_vectorizer.executor&quot;: &quot;Run&quot;,
-    &quot;Python.3_kmeans.executor&quot;: &quot;Run&quot;,
-    &quot;Python.4_fake_news_classifier_tfidf.executor&quot;: &quot;Run&quot;,
-    &quot;Python.4_scaled_data.executor&quot;: &quot;Run&quot;,
-    &quot;Python.5_small_number_norm.executor&quot;: &quot;Run&quot;,
-    &quot;Python.6_log_normalization.executor&quot;: &quot;Run&quot;,
-    &quot;Python.7_scaling_data.executor&quot;: &quot;Run&quot;,
-    &quot;Python.classify.executor&quot;: &quot;Run&quot;,
-    &quot;Python.code1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.code2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.code3.executor&quot;: &quot;Run&quot;,
-    &quot;Python.extract_features.executor&quot;: &quot;Run&quot;,
-    &quot;Python.questao1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.questao2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.questao3.executor&quot;: &quot;Run&quot;,
-    &quot;Python.questão4.executor&quot;: &quot;Run&quot;,
-    &quot;Python.read_data.executor&quot;: &quot;Run&quot;,
-    &quot;Python.teste.executor&quot;: &quot;Run&quot;,
-    &quot;Python.train_test_split.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Henrique&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/data_mining_ufc&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.1_cluster_plot.executor": "Run",
+    "Python.1_countVectorizer.executor": "Run",
+    "Python.1_dendrogram.executor": "Run",
+    "Python.2_elbow_method.executor": "Run",
+    "Python.2_tf-idf-sklearn.executor": "Run",
+    "Python.3_1_manual_kmeans.executor": "Run",
+    "Python.3_fake_news_classifier_count_vectorizer.executor": "Run",
+    "Python.3_kmeans.executor": "Run",
+    "Python.4_fake_news_classifier_tfidf.executor": "Run",
+    "Python.4_scaled_data.executor": "Run",
+    "Python.5_small_number_norm.executor": "Run",
+    "Python.6_log_normalization.executor": "Run",
+    "Python.7_scaling_data.executor": "Run",
+    "Python.classify.executor": "Run",
+    "Python.code1.executor": "Run",
+    "Python.code2.executor": "Run",
+    "Python.code3.executor": "Run",
+    "Python.extract_features.executor": "Run",
+    "Python.plot.executor": "Run",
+    "Python.questao1.executor": "Run",
+    "Python.questao2.executor": "Run",
+    "Python.questao3.executor": "Run",
+    "Python.questão4.executor": "Run",
+    "Python.read_data.executor": "Run",
+    "Python.teste.executor": "Run",
+    "Python.train_test_split.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Henrique",
+    "last_opened_file_path": "C:/data_mining_ufc",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
-  <component name="RunManager" selected="Python.classify">
+}]]></component>
+  <component name="RunManager" selected="Python.plot">
     <configuration name="classify" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="data_mining_ufc" />
       <option name="ENV_FILES" value="" />
@@ -112,7 +111,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="read_data" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="plot" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="data_mining_ufc" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -121,11 +120,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/AV2/scripts" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/AV2/analysis" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/AV2/scripts/read_data.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/AV2/analysis/plot.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -180,11 +179,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.plot" />
+        <item itemvalue="Python.teste" />
         <item itemvalue="Python.classify" />
         <item itemvalue="Python.train_test_split" />
         <item itemvalue="Python.extract_features" />
-        <item itemvalue="Python.teste" />
-        <item itemvalue="Python.read_data" />
       </list>
     </recent_temporary>
   </component>
