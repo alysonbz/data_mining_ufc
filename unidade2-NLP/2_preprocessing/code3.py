@@ -1,19 +1,19 @@
-# Import Dictionary
-___
+# Importar Dictionary
+from gensim.corpora import Dictionary
 from src.utils import get_pre_process_wiki_articles
 
-# Create a Dictionary from the articles: dictionary
+# Criar um Dicionário a partir dos artigos: dictionary
 articles = get_pre_process_wiki_articles()
-dictionary =___(___)
+dictionary = Dictionary(articles)
 
-# Select the id for "computer": computer_id
-computer_id = __(__)
+# Selecionar o id para a palavra "computer": computer_id
+computer_id = dictionary.token2id.get("computer")
 
-# Use computer_id with the dictionary to print the word
-print('the word', __, 'has index', __, 'in dictionary')
+# Usar computer_id com o dicionário para imprimir a palavra
+print('The word', dictionary.get(computer_id), 'has index', computer_id, 'in the dictionary')
 
-# Create a MmCorpus: corpus
-corpus = [_._(_) for article in _]
+# Criar um MmCorpus: corpus
+corpus = [dictionary.doc2bow(article) for article in articles]
 
-# Print the first 10 word ids with their frequency counts from the fifth document
-print(corpus[_][:_])
+# Imprimir os primeiros 10 ids de palavras com suas contagens de frequência do quinto documento
+print(corpus[4][:10])

@@ -24,7 +24,6 @@ def load_images_from_folder(folder, label):
         img_path = os.path.join(folder, filename)
         try:
             with Image.open(img_path) as img:
-                img = img.convert('L')  # Converte para escala de cinza
                 img_array = np.array(img)
                 images.append(img_array)
                 labels.append(label)
