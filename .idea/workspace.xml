@@ -4,11 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3042669b-3a08-4d85-a940-661ac8c2bc05" name="Changes" comment="" />
+    <list default="true" id="3042669b-3a08-4d85-a940-661ac8c2bc05" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/AV2/scripts/classify.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AV2/scripts/extract_features.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AV2/scripts/read_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AV2/scripts/train_test_split.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -36,21 +49,26 @@
     &quot;Python.5_small_number_norm.executor&quot;: &quot;Run&quot;,
     &quot;Python.6_log_normalization.executor&quot;: &quot;Run&quot;,
     &quot;Python.7_scaling_data.executor&quot;: &quot;Run&quot;,
+    &quot;Python.classify.executor&quot;: &quot;Run&quot;,
     &quot;Python.code1.executor&quot;: &quot;Run&quot;,
     &quot;Python.code2.executor&quot;: &quot;Run&quot;,
     &quot;Python.code3.executor&quot;: &quot;Run&quot;,
+    &quot;Python.extract_features.executor&quot;: &quot;Run&quot;,
     &quot;Python.questao1.executor&quot;: &quot;Run&quot;,
     &quot;Python.questao2.executor&quot;: &quot;Run&quot;,
     &quot;Python.questao3.executor&quot;: &quot;Run&quot;,
     &quot;Python.questão4.executor&quot;: &quot;Run&quot;,
+    &quot;Python.read_data.executor&quot;: &quot;Run&quot;,
+    &quot;Python.teste.executor&quot;: &quot;Run&quot;,
+    &quot;Python.train_test_split.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;Henrique&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/projects anderson/gender-tool-evaluator&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/data_mining_ufc&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.code3">
-    <configuration name="code2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.classify">
+    <configuration name="classify" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="data_mining_ufc" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -59,11 +77,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Unidade3-PDI/1 - pre-processamento" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/AV2/scripts" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Unidade3-PDI/1 - pre-processamento/code2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/AV2/scripts/classify.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -72,7 +90,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="code3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="extract_features" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="data_mining_ufc" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -81,11 +99,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Unidade3-PDI/1 - pre-processamento" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/AV2/scripts" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Unidade3-PDI/1 - pre-processamento/code3.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/AV2/scripts/extract_features.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -94,7 +112,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="questao3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="read_data" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="data_mining_ufc" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -103,11 +121,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/AV1" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/AV2/scripts" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/AV1/questao3.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/AV2/scripts/read_data.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -116,7 +134,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="questão4" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="teste" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="data_mining_ufc" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -125,11 +143,33 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/AV1" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/AV2/scripts" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/AV1/questão4.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/AV2/scripts/teste.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="train_test_split" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="data_mining_ufc" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/AV2/scripts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/AV2/scripts/train_test_split.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -140,10 +180,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.code3" />
-        <item itemvalue="Python.code2" />
-        <item itemvalue="Python.questão4" />
-        <item itemvalue="Python.questao3" />
+        <item itemvalue="Python.classify" />
+        <item itemvalue="Python.train_test_split" />
+        <item itemvalue="Python.extract_features" />
+        <item itemvalue="Python.teste" />
+        <item itemvalue="Python.read_data" />
       </list>
     </recent_temporary>
   </component>
