@@ -3,11 +3,11 @@ import re
 from nltk.tokenize import regexp_tokenize
 from src.utils import get_sample_Santo_Graal
 
-# Split the script into lines: lines
+# Split the como rodar codigo into lines: lines
 holy_grail = get_sample_Santo_Graal()
 lines = holy_grail.split('\n')
 
-# Replace all script lines for speaker
+# Replace all como rodar codigo lines for speaker
 pattern = "[A-Z]{2,}(\s)?(#\d)?([A-Z]{2,})?:"
 lines = [re.sub(pattern, '', l) for l in lines]
 

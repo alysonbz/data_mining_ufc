@@ -1,0 +1,28 @@
+Para rodar o código no PyCharm, siga este guia passo a passo:
+
+Passos para configurar o projeto no PyCharm:
+Instalar o PyCharm:
+
+1 - Se ainda não tiver o PyCharm instalado, baixe a versão Community ou Professional.
+
+2 - Instalar as bibliotecas necessárias:
+
+3 - No PyCharm, abra o terminal
+    No terminal, execute:
+    pip install pandas Pillow numpy scikit-learn
+    Isso instalará as bibliotecas utilizadas no código (pandas, Pillow, numpy, scikit-learn).
+
+4 - Adicionar o código ao projeto:
+
+5 - Ajustar o caminho do dataset:
+    Verifique os caminhos das variáveis Covid_train, Covid_test, Normal_train, e Normal_test. Certifique-se de que os diretórios de imagens estão corretamente apontados no seu computador.
+    No PyCharm, você pode ajustar esses caminhos facilmente navegando nas pastas e copiando o caminho absoluto correto.
+
+6 -Coloque onde você quer que fique os dados minerados em armazenar atributos em csv
+
+7 - Executar o código:
+Para executar, clique com o botão direito no arquivo classificacao_covid.py e selecione "Run 'classificacao_covid'".
+O PyCharm abrirá uma janela de console na parte inferior da tela e exibirá as saídas do seu código, incluindo as métricas de avaliação.
+Visualizar arquivos CSV gerados:
+
+Após a execução do código, os arquivos CSV contendo as características extraídas serão salvos no diretório especificado. No PyCharm, você pode acessar esses arquivos diretamente pelo navegador de arquivos (lado esquerdo do PyCharm).

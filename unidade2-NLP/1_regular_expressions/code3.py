@@ -18,7 +18,7 @@ pattern1 = r"\[(.*?)\]"
 # Use re.search to find the first text in square brackets
 print(re.search(pattern1, scene_one))
 
-# Find the script notation at the beginning of the fourth sentence and print it
+# Find the como rodar codigo notation at the beginning of the fourth sentence and print it
 pattern2 = r"[A-Za-z]+:"
 personagem_match = re.search(pattern2, sentences[3])
 print(personagem_match)
