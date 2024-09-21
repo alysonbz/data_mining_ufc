@@ -16,7 +16,7 @@ english_stop = get_english_stop_words()
 no_stops = [t for t in alpha_only if t not in english_stop]
 
 # Instantiate the WordNetLemmatizer
-wordnet_lemmatizer = WordNetLemmatizer())
+wordnet_lemmatizer = WordNetLemmatizer()
 
 # Lemmatize all tokens into a new list: lemmatized
 lemmatized = [wordnet_lemmatizer.lemmatize(t) for t in no_stops]
