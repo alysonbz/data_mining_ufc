@@ -3,36 +3,35 @@ from collections import defaultdict
 from gensim.corpora.dictionary import Dictionary
 from src.utils import get_pre_process_wiki_articles
 
-# Create a Dictionary from the articles: dictionary
+# Criar um Dicionário a partir dos artigos: dictionary
 articles = get_pre_process_wiki_articles()
 dictionary = Dictionary(articles)
 
-# Create a MmCorpus: corpus
+# Criar um MmCorpus: corpus
 corpus = [dictionary.doc2bow(article) for article in articles]
 
-# Get the fifth document in corpus: doc
+# Obter o quinto documento no corpus: doc
 doc = corpus[4]
 
-# Sort the doc for frequency: bow_doc
+# Ordenar o doc por frequência: bow_doc
 bow_doc = sorted(doc, key=lambda w: w[1], reverse=True)
 
-# Print the top 5 words of the document alongside the count
+# Imprimir as 5 principais palavras do documento juntamente com a contagem
 for word_id, word_count in bow_doc[:5]:
-    print("The token ",__,"appears ",__ , "times")
+    print("The token", dictionary.get(word_id), "appears", word_count, "times")
 
-# Create the defaultdict: total_word_count
+# Criar o defaultdict: total_word_count
 total_word_count = defaultdict(int)
 for word_id, word_count in itertools.chain.from_iterable(corpus):
-    __[__] += __
+    total_word_count[word_id] += word_count
 
-# Choose a key between 0 and 10 and show the count with a print function.
-key = __
-print("the key", __,"in defaultdict has count: ", ___,'\n')
+# Escolher uma chave entre 0 e 10 e mostrar a contagem com uma função print
+key = 3
+print("The key", key, "in defaultdict has count:", total_word_count[key], '\n')
 
-# Create a sorted list from the defaultdict: sorted_word_count
-sorted_word_count = sorted(____, key=lambda w: w[1], reverse=True)
+# Criar uma lista ordenada a partir do defaultdict: sorted_word_count
+sorted_word_count = sorted(total_word_count.items(), key=lambda w: w[1], reverse=True)
 
-# Print the top 5 words across all documents alongside the count
-for ____, ____ in sorted_word_count[:5]:
-    print(____.____(____), ____)
-
+# Imprimir as 5 principais palavras em todos os documentos juntamente com a contagem
+for word_id, count in sorted_word_count[:5]:
+    print(dictionary.get(word_id), count)

@@ -17,4 +17,5 @@ print(fifa[['sliding_tackle','aggression', 'cluster_labels']].groupby('cluster_l
 
 # Create a scatter plot through seaborn
 sns.scatterplot(x='sliding_tackle',y='aggression', hue='cluster_labels',data=fifa)
+plt.legend()
 plt.show()
