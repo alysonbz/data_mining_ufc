@@ -1,15 +1,19 @@
-from src.pdi_utils import show_image
-# Import the modules from skimage
-from skimage import ____, ____
+import numpy as np
+from src.pdi_utils import load_flipped_seville, show_image
 
-# Load the rocket image
-rocket = data.____()
+flipped_seville = load_flipped_seville()
 
-# Convert the image to grayscale
-gray_scaled_rocket = color.____(____)
+# Show original image
+show_image(flipped_seville, 'Seville Flipped')
 
-# Show the original image
-show_image(rocket, 'Original RGB image')
+# Flip the image vertically
+seville_vertical_flip = np.flipud(flipped_seville)
 
-# Show the grayscale image
-show_image(gray_scaled_rocket, 'Grayscale image')
+# Show image flipped vertically
+show_image(seville_vertical_flip, 'Seville Vertical Flipped')
+
+# Flip the image horizontally
+seville_horizontal_flip = np.fliplr(flipped_seville)
+
+# Show image flipped horizontally
+show_image(seville_horizontal_flip, 'Seville Horizontal Flipped')

@@ -22,22 +22,24 @@ data = pd.read_csv('Corona_NLP_train.csv', encoding='latin1')
 def texto_processado(data, coluna_texto):
     def limpar_texto(texto):
         texto = re.sub(r"http\S+|www\S+|https\S+", '', texto, flags=re.MULTILINE)
-        texto = re.sub(r'\@w+|\#', '', texto)
+        texto = re.sub(r'\@\w+|\#', '', texto)
         texto = re.sub(r'[^\w\s]', '', texto)
         texto = re.sub(r'\d+', '', texto)
         return texto.lower()
     
+    stopword_set = set(stopwords.words('english'))
+    
     for coluna in coluna_texto:
-    #aplicação de limpeza de texto
+        # Aplicar a limpeza de texto
         data[coluna] = data[coluna].apply(limpar_texto)
-
-    #criação de uma nova coluna 'tokens' para armazenar os textos divididos em tokens
+        
+        # Tokenizar o texto limpo
         data[coluna + '_tokens'] = data[coluna].apply(word_tokenize)
-
-    #remoção de Stopwords
-        stopword = set(stopwords.words('portuguese'))
-        data[coluna + '_tokens'] = data[coluna + '_tokens'].apply(lambda x: [word for word in x if word not in stopword])
-
+        
+        # Remover stopwords dos tokens
+        data[coluna + '_tokens'] = data[coluna + '_tokens'].apply(
+            lambda x: [word for word in x if word not in stopword_set]
+        )
     return data
 
 
@@ -52,4 +54,6 @@ train = texto_processado(train, ['OriginalTweet', 'Sentiment'])
 
 print("Test Dataset Tokens:")
 print(train[['OriginalTweet_tokens', 'Sentiment_tokens']].head(5))
+
+train.to_csv("train.csv")
 
