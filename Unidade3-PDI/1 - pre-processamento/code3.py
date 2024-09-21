@@ -7,17 +7,22 @@ import matplotlib.pyplot as plt
 image = load_red_roses()
 
 # Show original image
-__(__,'image RGB')
+show_image(image,'image RGB')
 
 # Obtain the red channel
-red_channel = __
+red_channel = image[:, :, 0]
+blue_channel = image[:, :, 1]
+green_channel = image[:, :, 2]
+
 
 # Show original image
-__(__,'image red channel')
+show_image(red_channel,'image red channel')
+show_image(blue_channel,'image blue channel')
+show_image(green_channel,'image green channel')
 
 # Plot the red histogram with bins in a range of 256
-plt.__(__, bins=__)
+plt.hist(red_channel.ravel(), bins=10)
 
 # Set title and show
-plt.title('Red Histogram')
+plt.title('Blue Histogram')
 plt.show()
