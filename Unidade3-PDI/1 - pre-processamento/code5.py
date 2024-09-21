@@ -26,4 +26,4 @@ local_thresh = threshold_local(page_image, block_size, offset=10)
 binary_local = page_image > local_thresh
 
 # Show the binary image
-show_image(binary_local, 'Local thresholding')
+show_image(binary_local, 'Local thresholding')

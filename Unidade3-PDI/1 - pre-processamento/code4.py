@@ -21,4 +21,4 @@ thresh = threshold_otsu(chess_pieces_image_gray)
 binary = chess_pieces_image_gray > thresh
 
 # Show the binary image
-show_image(binary, 'Binary image')
+show_image(binary,'Binary image')

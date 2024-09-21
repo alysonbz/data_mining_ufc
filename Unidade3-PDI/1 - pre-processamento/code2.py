@@ -17,4 +17,4 @@ show_image(seville_vertical_flip, 'Seville Vertical Flipped')
 seville_horizontal_flip = np.fliplr(flipped_seville)
 
 # Show image flipped horizontally
-show_image(seville_horizontal_flip, 'Seville horizontal Flipped')
+show_image(seville_horizontal_flip, 'Seville horizontal Flipped')
