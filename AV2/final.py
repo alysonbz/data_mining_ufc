@@ -3,7 +3,8 @@ from data_loading import load_dataset
 from data_splitting import split_data
 from feature_extraction import extract_features
 from csv_saving import save_to_csv
-from model_training import train_random_forest, train_knn, train_svm, evaluate_model
+from model_training import train_random_forest, train_knn, train_svm, evaluate_model, train_adaboost
+
 
 def main():
     base_dir = os.getcwd()
@@ -37,6 +38,10 @@ def main():
     svm_model = train_svm(X_train_features, y_train)
     evaluate_model(svm_model, X_test_features, y_test)
 
+    # 7. Treinamento do modelo Adaboost
+    print("\nAvaliação com AdaBoost:")
+    ab_model = train_adaboost(X_train_features, y_train)
+    evaluate_model(ab_model, X_test_features, y_test)
 
 if __name__ == "__main__":
     main()
