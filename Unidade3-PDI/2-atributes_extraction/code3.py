@@ -6,7 +6,7 @@ building_image = load_building_image()
 
 
 # Apply filter sigma = 1
-gaussian_image = gaussian(___, sigma=___,multichannel = True)
+gaussian_image = gaussian(building_image, sigma=1,multichannel = True)
 
 # Show original and resulting image to compare
 show_image(building_image, "Original")
@@ -14,13 +14,15 @@ show_image(gaussian_image, "Reduced sharpness Gaussian with sigma = 1")
 
 
 # Apply gaussian filter sigma = 5
-____
+show_image(gaussian_image_sigma_5, "Reduced sharpness Gaussian with sigma = 5")
+
 
 # Show resulting image to compare
-show_image(___, "Reduced sharpness Gaussian with sigma = 5")
+show_image(gaussian_image_sigma_5, "Reduced sharpness Gaussian with sigma = 5")
 
 # Apply filter sigma = 10
-____
+show_image(gaussian_image_sigma_10, "Reduced sharpness Gaussian with sigma = 10")
+
 
 # Show resulting image to compare
-show_image(___, "Reduced sharpness Gaussian with sigma = 10")
+show_image(gaussian_image_sigma_10, "Reduced sharpness Gaussian with sigma = 10")

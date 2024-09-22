@@ -6,7 +6,7 @@ from skimage import color, data
 rocket = data.rocket()
 
 # Convert the image to grayscale
-gray_scaled_rocket = color.____(____)
+gray_scaled_rocket = color.rgb2gray(rocket)
 
 # Show the original image
 show_image(rocket, 'Original RGB image')
