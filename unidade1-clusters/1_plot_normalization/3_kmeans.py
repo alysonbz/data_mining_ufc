@@ -8,11 +8,11 @@ from scipy.cluster.vq import kmeans, vq
 df= loadpokemon_dataset_df()
 
 # Compute cluster centers
-centroids,data = kmeans(df[['Attack', 'Defense']], num_clusters, inter=100)
+centroids,data = kmeans(df,2)
 
 # Assign cluster labels
-df['cluster_labels'], _ = vq(df[['Attack', 'Defense']],centroids)
+df['cluster_labels'], _ = vq(df,centroids)
 
 # Plot the points with seaborn
-sns.__(x = "Attack", y = "Defense", hue="cluster_labels", data=df)
+sns.scatterplot(x = 'x', y = 'y', hue='cluster_labels', data=df)
 plt.show()
